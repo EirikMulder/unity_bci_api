@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System;
+using SensorAPI;
 
 public class Tester : IController
 {
-    public Dictionary<string, DataList> data { get; private set; }
-    public bool isConnected { get; set; }
+    public Dictionary<string, DataList> Data { get; private set; }
+    public bool IsConnected { get; set; }
+    public bool IsUpdating { get; set; }
     public void Start()
     {
     }

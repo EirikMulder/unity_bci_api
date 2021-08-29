@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
+namespace SensorAPI
+{
 public class TimedData
 {
     public DateTime time;
@@ -86,3 +88,4 @@ public class DataList
         return average;
     }
 }
+} // Namespace BCIData

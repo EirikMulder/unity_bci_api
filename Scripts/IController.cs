@@ -13,11 +13,14 @@ using System;
  * and can take averages, weighted averages, and preform other operations on the data.
  *
  */
+namespace SensorAPI
+{
 public interface IController
 {
-    Dictionary<string, DataList> data { get; } // The latest data from the device.
-    bool isConnected { get; } // Is the device connected to the PC?
-    bool isUpdating { get; } // Is the data property being updated by the device?
+    Dictionary<string, DataList> Data { get; } // The latest data from the device.
+    bool IsConnected { get; } // Is the device connected to the PC?
+    bool IsUpdating { get; } // Is the data property being updated by the device?
     void Start(); // Start data collection, if connected.
     void Stop(); // Stop data collection.
 }
+} // Namespace SensorAPI

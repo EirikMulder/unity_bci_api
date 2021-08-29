@@ -1,19 +1,20 @@
 using System;
-using System.IO;
-using System.IO.Ports;
 using System.Threading;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using SensorAPI;
 
+namespace SensorAPI
+{
 public class HEGduino : IController
 {
     // Interface
-    public Dictionary<string, DataList> data { get; private set; }
-    public bool isConnected { get; private set; }
-    public bool isUpdating { get; private set; }
+    public Dictionary<string, DataList> Data { get; private set; }
+    public bool IsConnected { get; private set; }
+    public bool IsUpdating { get; private set; }
 
     // Internal vars
-    SerialPort serialPort;
+    SerialConnection hegDevice;
     Thread thread;
     string portLocation;
     bool killThread = false;
@@ -21,43 +22,43 @@ public class HEGduino : IController
     ConcurrentQueue<string> fromHEG;
 
     // Constants
-    const string STARTMSG = "f";
-    const string STOPMSG = "t";
-    const int BAUDRATE = 115200;
+    const string StartMsg = "f";
+    const string StopMsg = "t";
+    const int BaudRate = 115200;
 
     public void Start()
     {
         killThread = false;
-        isUpdating = true;
+        IsUpdating = true;
         toHEG = new ConcurrentQueue<string>();
         fromHEG = new ConcurrentQueue<string>();
         thread = new Thread(ThreadLoop);
         thread.Start();
-        toHEG.Enqueue(STARTMSG);
+        toHEG.Enqueue(StartMsg);
     }
 
     public void Stop()
     {
-        isUpdating = false;
+        IsUpdating = false;
         if (thread.IsAlive)
         {
-            toHEG.Enqueue(STOPMSG);
+            toHEG.Enqueue(StopMsg);
             killThread = true;
         }
     }
 
-    public HEGduino(string portName)
+    public HEGduino(string portLocation)
     {
-        data = new Dictionary<string, DataList>() {{ "brain_bloodflow", new DataList() }};
-        this.portName = portName;
+        Data = new Dictionary<string, DataList>() {{ "brain_bloodflow", new DataList() }};
+        this.portLocation = portLocation;
     }
 
     ~HEGduino()
     {
-        if (isConnected)
+        if (IsConnected)
         {
             Stop();
-            isConnected = false;
+            IsConnected = false;
         }
     }
 
@@ -65,26 +66,8 @@ public class HEGduino : IController
     {
         while (!killThread)
         {
-            try
-            {
-                if (toHEG.Count > 0)
-                {
-                    toHEG.TryDequeue(out string message);
-                    serialPort.WriteLine(message);
-                    serialPort.BaseStream.Flush();
-                }
-                try
-                {
-                    fromHEG.Enqueue(serialPort.ReadLine());
-                }
-                catch (TimeoutException) {}
-            }
-            catch (IOException)
-            {
-                isConnected = false;
-                killThread = true;
-                break;
-            }
+
         }
     }
 }
+} // Namespace SensorAPI
