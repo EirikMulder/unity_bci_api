@@ -7,10 +7,12 @@ using System.Collections.Concurrent;
 
 public class HEGduino : IController
 {
+    // Interface
     public Dictionary<string, DataList> data { get; private set; }
     public bool isConnected { get; private set; }
     public bool isUpdating { get; private set; }
 
+    // Internal vars
     SerialPort serialPort;
     Thread thread;
     string portLocation;
@@ -18,6 +20,7 @@ public class HEGduino : IController
     ConcurrentQueue<string> toHEG;
     ConcurrentQueue<string> fromHEG;
 
+    // Constants
     const string STARTMSG = "f";
     const string STOPMSG = "t";
     const int BAUDRATE = 115200;
