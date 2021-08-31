@@ -51,6 +51,7 @@ public class HEGduino : IController
     {
         Data = new Dictionary<string, DataList>() {{ "brain_bloodflow", new DataList() }};
         this.portLocation = portLocation;
+        hegDevice = new SerialConnection(portLocation, BaudRate, readTimeout: 50);
     }
 
     ~HEGduino()
@@ -66,7 +67,21 @@ public class HEGduino : IController
     {
         while (!killThread)
         {
-
+            if (toHEG.TryDequeue(out string toMessage))
+            {
+                if (!hegDevice.TryWriteLine(toMessage))
+                {
+                    IsConnected = false;
+                }
+            }
+            if (hegDevice.TryReadLine(out string fromMessage))
+            {
+                fromHEG.Enqueue(fromMessage);
+            }
+            else
+            {
+                IsConnected = false;
+            }
         }
     }
 }
