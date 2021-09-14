@@ -23,6 +23,7 @@ public class SerialConnection
     public SerialConnection(string portName, int baudRate, int readTimeout = 50)
     {
         port = new SerialPort(portName, baudRate);
+        port.Open();
         this.ReadTimeout = readTimeout;
     }
 

@@ -1,0 +1,79 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/eirikmulder/Projects/Unity/unity_bci_api/Assets/unity_bci_api/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/51b55182/
+Add	Scripts/Data.cs	/^    public void Add(TimedData value)$/;"	m	class:SensorAPI.DataList
+Add	Scripts/Data.cs	/^    public void Add(double value)$/;"	m	class:SensorAPI.DataList
+Add	Scripts/Data.cs	/^    public void Add(double value, DateTime time)$/;"	m	class:SensorAPI.DataList
+Average	Scripts/Data.cs	/^    public double Average()$/;"	m	class:SensorAPI.DataList
+BaudRate	Scripts/Controllers/HEGduino.cs	/^    const int BaudRate = 115200;$/;"	f	class:SensorAPI.HEGduino	file:
+Count	Scripts/Data.cs	/^    public int Count { get { return data.Count; } }$/;"	p	class:SensorAPI.DataList
+Data	Scripts/Controllers/HEGduino.cs	/^    public Dictionary<string, DataList> Data { get; private set; }$/;"	p	class:SensorAPI.HEGduino
+Data	Scripts/Controllers/Tester.cs	/^    public Dictionary<string, DataList> Data { get; private set; }$/;"	p	class:Tester
+Data	Scripts/IController.cs	/^    Dictionary<string, DataList> Data { get; } \/\/ The latest data from the device.$/;"	p	interface:SensorAPI.IController
+DataList	Scripts/Data.cs	/^    public DataList(List<TimedData> data, int limit = 10, int deviationLimit = 0)$/;"	m	class:SensorAPI.DataList
+DataList	Scripts/Data.cs	/^    public DataList(int limit = 10, int deviationLimit = 0)$/;"	m	class:SensorAPI.DataList
+DataList	Scripts/Data.cs	/^public class DataList$/;"	c	namespace:SensorAPI
+HEGduino	Scripts/Controllers/HEGduino.cs	/^    public HEGduino(string portLocation)$/;"	m	class:SensorAPI.HEGduino
+HEGduino	Scripts/Controllers/HEGduino.cs	/^public class HEGduino : IController$/;"	c	namespace:SensorAPI
+IController	Scripts/IController.cs	/^public interface IController$/;"	i	namespace:SensorAPI
+IsConnected	Scripts/Controllers/HEGduino.cs	/^    public bool IsConnected { get; private set; }$/;"	p	class:SensorAPI.HEGduino
+IsConnected	Scripts/Controllers/Tester.cs	/^    public bool IsConnected { get; set; }$/;"	p	class:Tester
+IsConnected	Scripts/IController.cs	/^    bool IsConnected { get; } \/\/ Is the device connected to the PC?$/;"	p	interface:SensorAPI.IController
+IsUpdating	Scripts/Controllers/HEGduino.cs	/^    public bool IsUpdating { get; private set; }$/;"	p	class:SensorAPI.HEGduino
+IsUpdating	Scripts/Controllers/Tester.cs	/^    public bool IsUpdating { get; set; }$/;"	p	class:Tester
+IsUpdating	Scripts/IController.cs	/^    bool IsUpdating { get; } \/\/ Is the data property being updated by the device?$/;"	p	interface:SensorAPI.IController
+ReadTimeout	Scripts/SensorCommunications/Serial.cs	/^    public int ReadTimeout {$/;"	p	class:SensorAPI.SerialConnection
+SensorAPI	Scripts/Controllers/HEGduino.cs	/^namespace SensorAPI$/;"	n
+SensorAPI	Scripts/Data.cs	/^namespace SensorAPI$/;"	n
+SensorAPI	Scripts/IController.cs	/^namespace SensorAPI$/;"	n
+SensorAPI	Scripts/SensorCommunications/Serial.cs	/^namespace SensorAPI$/;"	n
+SerialConnection	Scripts/SensorCommunications/Serial.cs	/^    public SerialConnection(string portName, int baudRate, int readTimeout = 50)$/;"	m	class:SensorAPI.SerialConnection
+SerialConnection	Scripts/SensorCommunications/Serial.cs	/^public class SerialConnection$/;"	c	namespace:SensorAPI
+Start	Scripts/Controllers/HEGduino.cs	/^    public void Start()$/;"	m	class:SensorAPI.HEGduino
+Start	Scripts/Controllers/Tester.cs	/^    public void Start()$/;"	m	class:Tester
+Start	Scripts/IController.cs	/^    void Start(); \/\/ Start data collection, if connected.$/;"	m	interface:SensorAPI.IController
+Start	Scripts/Testing/TestBehavior.cs	/^    public void Start()$/;"	m	class:TestBehavior
+StartMsg	Scripts/Controllers/HEGduino.cs	/^    const string StartMsg = "f";$/;"	f	class:SensorAPI.HEGduino	file:
+Stop	Scripts/Controllers/HEGduino.cs	/^    public void Stop()$/;"	m	class:SensorAPI.HEGduino
+Stop	Scripts/Controllers/Tester.cs	/^    public void Stop()$/;"	m	class:Tester
+Stop	Scripts/IController.cs	/^    void Stop(); \/\/ Stop data collection.$/;"	m	interface:SensorAPI.IController
+StopMsg	Scripts/Controllers/HEGduino.cs	/^    const string StopMsg = "t";$/;"	f	class:SensorAPI.HEGduino	file:
+TestBehavior	Scripts/Testing/TestBehavior.cs	/^public class TestBehavior : MonoBehaviour$/;"	c
+Tester	Scripts/Controllers/Tester.cs	/^    public Tester()$/;"	m	class:Tester
+Tester	Scripts/Controllers/Tester.cs	/^public class Tester : IController$/;"	c
+ThreadLoop	Scripts/Controllers/HEGduino.cs	/^    void ThreadLoop()$/;"	m	class:SensorAPI.HEGduino	file:
+TimedData	Scripts/Data.cs	/^    public TimedData(double value)$/;"	m	class:SensorAPI.TimedData
+TimedData	Scripts/Data.cs	/^    public TimedData(double value, DateTime time)$/;"	m	class:SensorAPI.TimedData
+TimedData	Scripts/Data.cs	/^public class TimedData$/;"	c	namespace:SensorAPI
+TryReadLine	Scripts/SensorCommunications/Serial.cs	/^    public bool TryReadLine(out string message)$/;"	m	class:SensorAPI.SerialConnection
+TryWriteLine	Scripts/SensorCommunications/Serial.cs	/^    public bool TryWriteLine(string message)$/;"	m	class:SensorAPI.SerialConnection
+Update	Scripts/Testing/TestBehavior.cs	/^    public void Update()$/;"	m	class:TestBehavior
+WeightedAverage	Scripts/Data.cs	/^    public double WeightedAverage(double weight)$/;"	m	class:SensorAPI.DataList
+data	Scripts/Data.cs	/^    public List<TimedData> data;$/;"	f	class:SensorAPI.DataList
+data	Scripts/Data.cs	/^    public static implicit operator double(TimedData data) => data.value;$/;"	f	class:SensorAPI.TimedData
+deviationLimit	Scripts/Data.cs	/^    public double deviationLimit;$/;"	f	class:SensorAPI.DataList
+file	Scripts/Testing/TestBehavior.cs	/^    StreamWriter file;$/;"	f	class:TestBehavior	file:
+fromHEG	Scripts/Controllers/HEGduino.cs	/^    ConcurrentQueue<string> fromHEG;$/;"	f	class:SensorAPI.HEGduino	file:
+heg	Scripts/Testing/TestBehavior.cs	/^    HEGduino heg;$/;"	f	class:TestBehavior	file:
+hegDevice	Scripts/Controllers/HEGduino.cs	/^    SerialConnection hegDevice;$/;"	f	class:SensorAPI.HEGduino	file:
+killThread	Scripts/Controllers/HEGduino.cs	/^    bool killThread = false;$/;"	f	class:SensorAPI.HEGduino	file:
+limit	Scripts/Data.cs	/^    public int limit;$/;"	f	class:SensorAPI.DataList
+messageDelay	Scripts/SensorCommunications/Serial.cs	/^    public int messageDelay = 5000;$/;"	f	class:SensorAPI.SerialConnection
+port	Scripts/SensorCommunications/Serial.cs	/^    SerialPort port;$/;"	f	class:SensorAPI.SerialConnection	file:
+portLocation	Scripts/Controllers/HEGduino.cs	/^    string portLocation;$/;"	f	class:SensorAPI.HEGduino	file:
+portLocation	Scripts/Testing/TestBehavior.cs	/^    public string portLocation = "\/dev\/tty.usbserial-01DFAAE3";$/;"	f	class:TestBehavior
+thread	Scripts/Controllers/HEGduino.cs	/^    Thread thread;$/;"	f	class:SensorAPI.HEGduino	file:
+time	Scripts/Data.cs	/^    public DateTime time;$/;"	f	class:SensorAPI.TimedData
+toHEG	Scripts/Controllers/HEGduino.cs	/^    ConcurrentQueue<string> toHEG;$/;"	f	class:SensorAPI.HEGduino	file:
+value	Scripts/Data.cs	/^    public double value;$/;"	f	class:SensorAPI.TimedData
+x	Scripts/Data.cs	/^    public static implicit operator double(DataList x) => x[x.Count-1].value;$/;"	f	class:SensorAPI.DataList
+~HEGduino	Scripts/Controllers/HEGduino.cs	/^    ~HEGduino()$/;"	m	class:SensorAPI.HEGduino	file:
+~Tester	Scripts/Controllers/Tester.cs	/^    ~Tester()$/;"	m	class:Tester	file:

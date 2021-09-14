@@ -1,31 +1,36 @@
 using UnityEngine;
 using SensorAPI;
+using System.IO;
 
-public class TestBehavior : MonoBehavior
+public class TestBehavior : MonoBehaviour
 {
     HEGduino heg;
-    StreamWriter file = new StreamWriter("test_data.csv");
+    public string portLocation = "/dev/tty.usbserial-01DFAAE3";
+    StreamWriter file;
 
     public void Start()
     {
-        heg = new HEGduino("COM4");
+        heg = new HEGduino(portLocation);
+        heg.Start();
         heg.Data["brain_bloodflow"].limit = 30;
-        heg.Data["brain_bloodflow"].deviationLimit
-        Print("INIT");
+        heg.Data["brain_bloodflow"].deviationLimit = 1.5;
+        print("INIT");
+        file = new StreamWriter("test_data.csv");
         file.WriteLine("data,avg1,avg0.5");
     }
 
     public void Update()
     {
-        if (IsUpdating)
+        if (heg.IsUpdating)
         {
-            Print("Data: " + heg.Data["brain_bloodflow"]);
-            Print("AVG Data: " + heg.Data["brain_bloodflow"].WeightedAverage(0.5));
-            file.WriteLine(heg.Data["brain_bloodflow"] + "," + heg.Data["brain_bloodflow"].WeightedAverage(1) + "," + heg.Data["brain_bloodflow"].WeightedAverage(0.5))
+            //print("Data: " + (double)heg.Data["brain_bloodflow"]);
+            print("Amount: " + heg.Data["brain_bloodflow"].data.Count);
+            print("AVG Data: " + heg.Data["brain_bloodflow"].WeightedAverage(0.5));
+            file.WriteLine(heg.Data["brain_bloodflow"] + "," + heg.Data["brain_bloodflow"].WeightedAverage(1) + "," + heg.Data["brain_bloodflow"].WeightedAverage(0.5));
         }
-        if (!IsConnected)
+        if (!heg.IsConnected)
         {
-            Print("Disconnected.")
+            print("Disconnected.");
         }
     }
 }
