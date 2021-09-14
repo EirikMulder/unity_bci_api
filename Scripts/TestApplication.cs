@@ -2,10 +2,8 @@ using System;
 
 public class TestApplication
 {
+    HEGduino heg;
     public static void Main()
     {
-        var x = new Tester();
-        Console.WriteLine("HAHAHAHA");
-        Console.WriteLine("Test!");
     }
 }
