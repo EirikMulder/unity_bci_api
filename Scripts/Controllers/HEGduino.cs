@@ -52,6 +52,8 @@ public class HEGduino : IController
         Data = new Dictionary<string, DataList>() {{ "brain_bloodflow", new DataList() }};
         this.portLocation = portLocation;
         hegDevice = new SerialConnection(portLocation, BaudRate, readTimeout: 50);
+        // TODO: check connection
+        IsConnected = true;
     }
 
     ~HEGduino()
