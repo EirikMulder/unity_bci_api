@@ -18,8 +18,7 @@ void \mbox{\hyperlink{classSensorAPI_1_1HEGduino_a3d98bc98256e4ae5f564f600917675
 \begin{DoxyCompactList}\small\item\em Starts the \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}. Sets Is\+Updating to true, launches the management thread, and sends the start message. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSensorAPI_1_1HEGduino_abebc64b7b3f809b9f534c0feadc233dc}{Stop}} ()
 \begin{DoxyCompactList}\small\item\em Stops the \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}. Sets Is\+Updating to false, kills the management thread, and sends the stop message. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}\label{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}} 
-{\bfseries HEGduino} (string port\+Location)
+\mbox{\hyperlink{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}{HEGduino}} (string port\+Location)
 \begin{DoxyCompactList}\small\item\em Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets Is\+Connected to true. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -37,6 +36,24 @@ bool {\bfseries Is\+Updating}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 
 \doxysubsection{Detailed Description}
 Controls a single \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device. Connects to and manages a \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device, connected via serial. Provides data output from the device. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}\label{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!HEGduino@{HEGduino}}
+\index{HEGduino@{HEGduino}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{HEGduino()}{HEGduino()}}
+{\footnotesize\ttfamily Sensor\+API.\+HEGduino.\+HEGduino (\begin{DoxyParamCaption}\item[{string}]{port\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets Is\+Connected to true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Location} & A string with the serial port location (COMx on windows, file location on linux/macos). \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classSensorAPI_1_1HEGduino_a3d98bc98256e4ae5f564f6009176751b}\label{classSensorAPI_1_1HEGduino_a3d98bc98256e4ae5f564f6009176751b}} 

@@ -94,9 +94,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abebc64b7b3f809b9f534c0feadc233dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1HEGduino.html#abebc64b7b3f809b9f534c0feadc233dc">Stop</a> ()</td></tr>
 <tr class="memdesc:abebc64b7b3f809b9f534c0feadc233dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to false, kills the management thread, and sends the stop message.  <a href="classSensorAPI_1_1HEGduino.html#abebc64b7b3f809b9f534c0feadc233dc">More...</a><br /></td></tr>
 <tr class="separator:abebc64b7b3f809b9f534c0feadc233dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="memItemLeft" align="right" valign="top"><a id="ac8ea365b01f2d6ae6ee975192a4918b1" name="ac8ea365b01f2d6ae6ee975192a4918b1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HEGduino</b> (string portLocation)</td></tr>
-<tr class="memdesc:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true. <br /></td></tr>
+<tr class="memitem:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1HEGduino.html#ac8ea365b01f2d6ae6ee975192a4918b1">HEGduino</a> (string portLocation)</td></tr>
+<tr class="memdesc:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true.  <a href="classSensorAPI_1_1HEGduino.html#ac8ea365b01f2d6ae6ee975192a4918b1">More...</a><br /></td></tr>
 <tr class="separator:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -126,7 +125,42 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUpdating</b><code> 
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Controls a single <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a> device. Connects to and manages a <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a> device, connected via serial. Provides data output from the device. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac8ea365b01f2d6ae6ee975192a4918b1" name="ac8ea365b01f2d6ae6ee975192a4918b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ea365b01f2d6ae6ee975192a4918b1">&#9670;&nbsp;</a></span>HEGduino()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SensorAPI.HEGduino.HEGduino </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>portLocation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">portLocation</td><td>A string with the serial port location (COMx on windows, file location on linux/macos). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3d98bc98256e4ae5f564f6009176751b" name="a3d98bc98256e4ae5f564f6009176751b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d98bc98256e4ae5f564f6009176751b">&#9670;&nbsp;</a></span>Start()</h2>
 

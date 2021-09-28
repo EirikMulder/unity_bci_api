@@ -73,6 +73,7 @@ public class HEGduino : IController
     /**
      * @brief Initializes the HEG connection with the provided serial port.
      * Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true.
+     * @param portLocation A string with the serial port location (COMx on windows, file location on linux/macos).
      */
     public HEGduino(string portLocation)
     {
