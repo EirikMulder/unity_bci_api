@@ -89,11 +89,14 @@ Inheritance diagram for SensorAPI.HEGduino:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d98bc98256e4ae5f564f6009176751b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1HEGduino.html#a3d98bc98256e4ae5f564f6009176751b">Start</a> ()</td></tr>
+<tr class="memdesc:a3d98bc98256e4ae5f564f6009176751b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to true, launches the management thread, and sends the start message.  <a href="classSensorAPI_1_1HEGduino.html#a3d98bc98256e4ae5f564f6009176751b">More...</a><br /></td></tr>
 <tr class="separator:a3d98bc98256e4ae5f564f6009176751b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abebc64b7b3f809b9f534c0feadc233dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1HEGduino.html#abebc64b7b3f809b9f534c0feadc233dc">Stop</a> ()</td></tr>
+<tr class="memdesc:abebc64b7b3f809b9f534c0feadc233dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to false, kills the management thread, and sends the stop message.  <a href="classSensorAPI_1_1HEGduino.html#abebc64b7b3f809b9f534c0feadc233dc">More...</a><br /></td></tr>
 <tr class="separator:abebc64b7b3f809b9f534c0feadc233dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="memItemLeft" align="right" valign="top"><a id="ac8ea365b01f2d6ae6ee975192a4918b1" name="ac8ea365b01f2d6ae6ee975192a4918b1"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>HEGduino</b> (string portLocation)</td></tr>
+<tr class="memdesc:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true. <br /></td></tr>
 <tr class="separator:ac8ea365b01f2d6ae6ee975192a4918b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -104,9 +107,11 @@ Dictionary&lt; string, <a class="el" href="classSensorAPI_1_1DataList.html">Data
 <tr class="separator:a4541c23d226283f07faab28b31bfb7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaba196b649ec2aab361304cbfa00cf89"><td class="memItemLeft" align="right" valign="top"><a id="aaba196b649ec2aab361304cbfa00cf89" name="aaba196b649ec2aab361304cbfa00cf89"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsConnected</b><code> [get]</code></td></tr>
+<tr class="memdesc:aaba196b649ec2aab361304cbfa00cf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool: Is the device connected to the serial port. <br /></td></tr>
 <tr class="separator:aaba196b649ec2aab361304cbfa00cf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb425281bad1dbb31c6a893f5d13e49d"><td class="memItemLeft" align="right" valign="top"><a id="aeb425281bad1dbb31c6a893f5d13e49d" name="aeb425281bad1dbb31c6a893f5d13e49d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUpdating</b><code> [get]</code></td></tr>
+<tr class="memdesc:aeb425281bad1dbb31c6a893f5d13e49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool: Is the data field refreshing (false if device is connected but disabled) <br /></td></tr>
 <tr class="separator:aeb425281bad1dbb31c6a893f5d13e49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interfaceSensorAPI_1_1IController"><td colspan="2" onclick="javascript:toggleInherit('properties_interfaceSensorAPI_1_1IController')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interfaceSensorAPI_1_1IController.html">SensorAPI.IController</a></td></tr>
 <tr class="memitem:afa1017cb9a6a599a1f08dd14820c9a13 inherit properties_interfaceSensorAPI_1_1IController"><td class="memItemLeft" align="right" valign="top"><a id="afa1017cb9a6a599a1f08dd14820c9a13" name="afa1017cb9a6a599a1f08dd14820c9a13"></a>
@@ -145,6 +150,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUpdating</b><code> 
 </table>
 </div><div class="memdoc">
 
+<p>Starts the <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to true, launches the management thread, and sends the start message. </p>
+
 <p>Implements <a class="el" href="interfaceSensorAPI_1_1IController.html">SensorAPI.IController</a>.</p>
 
 </div>
@@ -171,6 +178,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUpdating</b><code> 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stops the <a class="el" href="classSensorAPI_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to false, kills the management thread, and sends the stop message. </p>
 
 <p>Implements <a class="el" href="interfaceSensorAPI_1_1IController.html">SensorAPI.IController</a>.</p>
 

@@ -13,14 +13,19 @@ namespace SensorAPI
  */
 public class HEGduino : IController
 {
-    // Interface
     /**
      * @brief Data output from the device.
      * A dictionary in the format: Label (string): DataList.
      * Use the 'brain_bloodflow' label to access the DataList for bloodflow from the HEG.
      */
     public Dictionary<string, DataList> Data { get; private set; }
+    /**
+     * @brief bool: Is the device connected to the serial port.
+     */
     public bool IsConnected { get; private set; }
+    /**
+     * @brief bool: Is the data field refreshing (false if device is connected but disabled)
+     */
     public bool IsUpdating { get; private set; }
 
     // Internal vars
@@ -36,6 +41,10 @@ public class HEGduino : IController
     const string StopMsg = "t";
     const int BaudRate = 115200;
 
+    /**
+     * @brief Starts the HEGduino.
+     * Sets IsUpdating to true, launches the management thread, and sends the start message.
+     */
     public void Start()
     {
         killThread = false;
@@ -47,6 +56,10 @@ public class HEGduino : IController
         toHEG.Enqueue(StartMsg);
     }
 
+    /**
+     * @brief Stops the HEGduino.
+     * Sets IsUpdating to false, kills the management thread, and sends the stop message.
+     */
     public void Stop()
     {
         IsUpdating = false;
@@ -57,6 +70,10 @@ public class HEGduino : IController
         }
     }
 
+    /**
+     * @brief Initializes the HEG connection with the provided serial port.
+     * Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true.
+     */
     public HEGduino(string portLocation)
     {
         Data = new Dictionary<string, DataList>() {{ "brain_bloodflow", new DataList() }};
