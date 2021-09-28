@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['messagedelay_0',['messageDelay',['../classSensorAPI_1_1SerialConnection.html#a3f69b632ea806ae180c1daf5ad9368b3',1,'SensorAPI::SerialConnection']]]
+  ['hegduino_0',['HEGduino',['../classSensorAPI_1_1HEGduino.html#ac8ea365b01f2d6ae6ee975192a4918b1',1,'SensorAPI.HEGduino.HEGduino()'],['../classSensorAPI_1_1HEGduino.html',1,'SensorAPI.HEGduino']]]
 ];

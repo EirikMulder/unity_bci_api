@@ -5,6 +5,9 @@ using Threading;
 
 namespace SensorAPI
 {
+/**
+ * @brief Manages a serial connection
+ */
 public class SerialConnection
 {
     /** 
@@ -22,7 +25,7 @@ public class SerialConnection
     }
 
     /**
-     * @brief TryWriteLine: The delay after writing a message to the port before returning.
+     * @brief TryWriteLine: The delay in milliseconds after writing a message to the port before returning.
      */
     public int messageDelay = 5000;
 

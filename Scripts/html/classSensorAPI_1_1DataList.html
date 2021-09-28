@@ -75,29 +75,39 @@ $(function() {
   <div class="headertitle"><div class="title">SensorAPI.DataList Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A list of <a class="el" href="classSensorAPI_1_1TimedData.html" title="A double value (value) paired with a DateTime timestamp (time)">TimedData</a> values. Keeps track of the number of values, the max number of values (for rolling averages), and the maximum absolute value of an added value.  
+ <a href="classSensorAPI_1_1DataList.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d929b32a7262fd72f5738779ba2f05b"><td class="memItemLeft" align="right" valign="top"><a id="a5d929b32a7262fd72f5738779ba2f05b" name="a5d929b32a7262fd72f5738779ba2f05b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DataList</b> (int limit=10, int deviationLimit=0)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DataList</b> (int <a class="el" href="classSensorAPI_1_1DataList.html#adc0ea055f482f12b84fc7252cf77b049">limit</a>=10, int <a class="el" href="classSensorAPI_1_1DataList.html#ae6385930f5a30df69a1aedc8f9e0ba0d">deviationLimit</a>=0)</td></tr>
+<tr class="memdesc:a5d929b32a7262fd72f5738779ba2f05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classSensorAPI_1_1DataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a> with default limit = 10, and no deviationLimit. <br /></td></tr>
 <tr class="separator:a5d929b32a7262fd72f5738779ba2f05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0464af3f95a3d5fcd19175f311277ca"><td class="memItemLeft" align="right" valign="top"><a id="af0464af3f95a3d5fcd19175f311277ca" name="af0464af3f95a3d5fcd19175f311277ca"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DataList</b> (List&lt; <a class="el" href="classSensorAPI_1_1TimedData.html">TimedData</a> &gt; data, int limit=10, int deviationLimit=0)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DataList</b> (List&lt; <a class="el" href="classSensorAPI_1_1TimedData.html">TimedData</a> &gt; data, int <a class="el" href="classSensorAPI_1_1DataList.html#adc0ea055f482f12b84fc7252cf77b049">limit</a>=10, int <a class="el" href="classSensorAPI_1_1DataList.html#ae6385930f5a30df69a1aedc8f9e0ba0d">deviationLimit</a>=0)</td></tr>
+<tr class="memdesc:af0464af3f95a3d5fcd19175f311277ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classSensorAPI_1_1DataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a> with a List&lt;TimedData&gt;. <br /></td></tr>
 <tr class="separator:af0464af3f95a3d5fcd19175f311277ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62bb8be2f40a43cd486ef5a4e6ca1411"><td class="memItemLeft" align="right" valign="top"><a id="a62bb8be2f40a43cd486ef5a4e6ca1411" name="a62bb8be2f40a43cd486ef5a4e6ca1411"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (double value)</td></tr>
+<tr class="memdesc:a62bb8be2f40a43cd486ef5a4e6ca1411"><td class="mdescLeft">&#160;</td><td class="mdescRight">add new double value at the current time. <br /></td></tr>
 <tr class="separator:a62bb8be2f40a43cd486ef5a4e6ca1411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a922282b5db06fb49a3a50d9c90808e4e"><td class="memItemLeft" align="right" valign="top"><a id="a922282b5db06fb49a3a50d9c90808e4e" name="a922282b5db06fb49a3a50d9c90808e4e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (double value, DateTime time)</td></tr>
+<tr class="memdesc:a922282b5db06fb49a3a50d9c90808e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">add new double value at the specified time. <br /></td></tr>
 <tr class="separator:a922282b5db06fb49a3a50d9c90808e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d48b4f2f681628b12048edfda7327d5"><td class="memItemLeft" align="right" valign="top"><a id="a2d48b4f2f681628b12048edfda7327d5" name="a2d48b4f2f681628b12048edfda7327d5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (<a class="el" href="classSensorAPI_1_1TimedData.html">TimedData</a> value)</td></tr>
+<tr class="memdesc:a2d48b4f2f681628b12048edfda7327d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">add new <a class="el" href="classSensorAPI_1_1TimedData.html" title="A double value (value) paired with a DateTime timestamp (time)">TimedData</a> value <br /></td></tr>
 <tr class="separator:a2d48b4f2f681628b12048edfda7327d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c6e18bbc38a1250fc6305d5b77b5bea"><td class="memItemLeft" align="right" valign="top"><a id="a8c6e18bbc38a1250fc6305d5b77b5bea" name="a8c6e18bbc38a1250fc6305d5b77b5bea"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>Average</b> ()</td></tr>
+<tr class="memdesc:a8c6e18bbc38a1250fc6305d5b77b5bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take the average of the list. <br /></td></tr>
 <tr class="separator:a8c6e18bbc38a1250fc6305d5b77b5bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a867e01dd95c2f1d0f0125910f218593a"><td class="memItemLeft" align="right" valign="top"><a id="a867e01dd95c2f1d0f0125910f218593a" name="a867e01dd95c2f1d0f0125910f218593a"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>WeightedAverage</b> (double weight)</td></tr>
+<tr class="memdesc:a867e01dd95c2f1d0f0125910f218593a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a weighted average of the list. weight is multipled with the index of each value to produce the weight. <br /></td></tr>
 <tr class="separator:a867e01dd95c2f1d0f0125910f218593a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -108,26 +118,28 @@ static implicit&#160;</td><td class="memItemRight" valign="bottom"><b>operator d
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a971dd70e457e8e22168f5ef662c95dc4"><td class="memItemLeft" align="right" valign="top"><a id="a971dd70e457e8e22168f5ef662c95dc4" name="a971dd70e457e8e22168f5ef662c95dc4"></a>
-List&lt; <a class="el" href="classSensorAPI_1_1TimedData.html">TimedData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="separator:a971dd70e457e8e22168f5ef662c95dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0ea055f482f12b84fc7252cf77b049"><td class="memItemLeft" align="right" valign="top"><a id="adc0ea055f482f12b84fc7252cf77b049" name="adc0ea055f482f12b84fc7252cf77b049"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>limit</b></td></tr>
+<tr class="memdesc:adc0ea055f482f12b84fc7252cf77b049"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max number of entries in the list. When exceeded, the earliest value added is removed. <br /></td></tr>
 <tr class="separator:adc0ea055f482f12b84fc7252cf77b049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6385930f5a30df69a1aedc8f9e0ba0d"><td class="memItemLeft" align="right" valign="top"><a id="ae6385930f5a30df69a1aedc8f9e0ba0d" name="ae6385930f5a30df69a1aedc8f9e0ba0d"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>deviationLimit</b></td></tr>
+<tr class="memdesc:ae6385930f5a30df69a1aedc8f9e0ba0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max absolute value of an entry. When exceeded, the value is rounded to the limit. If set to 0, there is no limit. <br /></td></tr>
 <tr class="separator:ae6385930f5a30df69a1aedc8f9e0ba0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a1f278bfa6b2f55afd21191ce34b6441f"><td class="memItemLeft" align="right" valign="top"><a id="a1f278bfa6b2f55afd21191ce34b6441f" name="a1f278bfa6b2f55afd21191ce34b6441f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Count</b><code> [get]</code></td></tr>
+<tr class="memdesc:a1f278bfa6b2f55afd21191ce34b6441f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of entries in the list. <br /></td></tr>
 <tr class="separator:a1f278bfa6b2f55afd21191ce34b6441f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e53ac7bff2fc8be3bd2a2b29761f21c"><td class="memItemLeft" align="right" valign="top"><a id="a7e53ac7bff2fc8be3bd2a2b29761f21c" name="a7e53ac7bff2fc8be3bd2a2b29761f21c"></a>
 <a class="el" href="classSensorAPI_1_1TimedData.html">TimedData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>this[int i]</b><code> [getset]</code></td></tr>
 <tr class="separator:a7e53ac7bff2fc8be3bd2a2b29761f21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A list of <a class="el" href="classSensorAPI_1_1TimedData.html" title="A double value (value) paired with a DateTime timestamp (time)">TimedData</a> values. Keeps track of the number of values, the max number of values (for rolling averages), and the maximum absolute value of an added value. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>Data.cs</li>
 </ul>
 </div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['messagedelay_0',['messageDelay',['../classSensorAPI_1_1SerialConnection.html#a3f69b632ea806ae180c1daf5ad9368b3',1,'SensorAPI::SerialConnection']]]
+  ['deviationlimit_0',['deviationLimit',['../classSensorAPI_1_1DataList.html#ae6385930f5a30df69a1aedc8f9e0ba0d',1,'SensorAPI::DataList']]]
 ];

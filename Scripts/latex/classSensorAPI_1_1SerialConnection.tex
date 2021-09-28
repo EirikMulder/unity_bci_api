@@ -1,5 +1,10 @@
 \hypertarget{classSensorAPI_1_1SerialConnection}{}\doxysection{Sensor\+API.\+Serial\+Connection Class Reference}
 \label{classSensorAPI_1_1SerialConnection}\index{SensorAPI.SerialConnection@{SensorAPI.SerialConnection}}
+
+
+Manages a serial connection.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,7 +19,7 @@ bool \mbox{\hyperlink{classSensorAPI_1_1SerialConnection_a8507e2247dd7ba97164d3e
 \item 
 \mbox{\Hypertarget{classSensorAPI_1_1SerialConnection_a3f69b632ea806ae180c1daf5ad9368b3}\label{classSensorAPI_1_1SerialConnection_a3f69b632ea806ae180c1daf5ad9368b3}} 
 int {\bfseries message\+Delay} = 5000
-\begin{DoxyCompactList}\small\item\em Try\+Write\+Line\+: The delay after writing a message to the port before returning. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Try\+Write\+Line\+: The delay in milliseconds after writing a message to the port before returning. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,6 +27,9 @@ int {\bfseries message\+Delay} = 5000
 int {\bfseries Read\+Timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Duration Try\+Read\+Line will wait before returning null. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Manages a serial connection. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSensorAPI_1_1SerialConnection_ad8a4d105f49d089c0c06bf35262abe44}\label{classSensorAPI_1_1SerialConnection_ad8a4d105f49d089c0c06bf35262abe44}} 
@@ -80,4 +88,4 @@ Writes a string to the serial port, and returns true/false for success.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Sensor\+Communications/Serial.\+cs\end{DoxyCompactItemize}
+Connections/Serial.\+cs\end{DoxyCompactItemize}

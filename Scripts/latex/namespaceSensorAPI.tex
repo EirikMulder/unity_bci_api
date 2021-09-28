@@ -4,12 +4,14 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}}
-\item 
+\begin{DoxyCompactList}\small\item\em A list of \mbox{\hyperlink{classSensorAPI_1_1TimedData}{Timed\+Data}} values. Keeps track of the number of values, the max number of values (for rolling averages), and the maximum absolute value of an added value. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}
 \begin{DoxyCompactList}\small\item\em Controls a single \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device. Connects to and manages a \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device, connected via serial. Provides data output from the device. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interfaceSensorAPI_1_1IController}{IController}}
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{interfaceSensorAPI_1_1IController}{IController}} interface defines how a BCI device driver should behave. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classSensorAPI_1_1SerialConnection}{Serial\+Connection}}
-\item 
+\begin{DoxyCompactList}\small\item\em Manages a serial connection. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSensorAPI_1_1Tester}{Tester}}
+\begin{DoxyCompactList}\small\item\em A test controller emulating a fake device. Can be used to test applications which rely on a device, as well as testing out the Data library on fake data sets. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classSensorAPI_1_1TimedData}{Timed\+Data}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A double value (value) paired with a Date\+Time timestamp (time) \end{DoxyCompactList}\end{DoxyCompactItemize}

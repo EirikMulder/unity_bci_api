@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['isconnected_0',['IsConnected',['../classSensorAPI_1_1HEGduino.html#aaba196b649ec2aab361304cbfa00cf89',1,'SensorAPI::HEGduino']]],
-  ['isupdating_1',['IsUpdating',['../classSensorAPI_1_1HEGduino.html#aeb425281bad1dbb31c6a893f5d13e49d',1,'SensorAPI::HEGduino']]]
+  ['data_0',['Data',['../classSensorAPI_1_1HEGduino.html#a4541c23d226283f07faab28b31bfb7d6',1,'SensorAPI.HEGduino.Data()'],['../interfaceSensorAPI_1_1IController.html#afa1017cb9a6a599a1f08dd14820c9a13',1,'SensorAPI.IController.Data()'],['../classSensorAPI_1_1Tester.html#a94222edf0c29856694d149d15c96493d',1,'SensorAPI.Tester.Data()']]]
 ];
