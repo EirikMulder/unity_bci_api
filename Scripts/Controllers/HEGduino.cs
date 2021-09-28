@@ -6,9 +6,19 @@ using SensorAPI;
 
 namespace SensorAPI
 {
+/**
+ * @brief Controls a single HEGduino device.
+ * Connects to and manages a HEGduino device, connected via serial.
+ * Provides data output from the device.
+ */
 public class HEGduino : IController
 {
     // Interface
+    /**
+     * @brief Data output from the device.
+     * A dictionary in the format: Label (string): DataList.
+     * Use the 'brain_bloodflow' label to access the DataList for bloodflow from the HEG.
+     */
     public Dictionary<string, DataList> Data { get; private set; }
     public bool IsConnected { get; private set; }
     public bool IsUpdating { get; private set; }
