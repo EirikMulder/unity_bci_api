@@ -77,14 +77,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad8a4d105f49d089c0c06bf35262abe44"><td class="memItemLeft" align="right" valign="top"><a id="ad8a4d105f49d089c0c06bf35262abe44" name="ad8a4d105f49d089c0c06bf35262abe44"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SerialConnection</b> (string portName, int baudRate, int readTimeout=50)</td></tr>
+<tr class="memitem:ad8a4d105f49d089c0c06bf35262abe44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1SerialConnection.html#ad8a4d105f49d089c0c06bf35262abe44">SerialConnection</a> (string portName, int baudRate, int readTimeout=50)</td></tr>
+<tr class="memdesc:ad8a4d105f49d089c0c06bf35262abe44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes and opens the serial port.  <a href="classSensorAPI_1_1SerialConnection.html#ad8a4d105f49d089c0c06bf35262abe44">More...</a><br /></td></tr>
 <tr class="separator:ad8a4d105f49d089c0c06bf35262abe44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a559f212445c0a87fbfa58a4bd8ff1e32"><td class="memItemLeft" align="right" valign="top"><a id="a559f212445c0a87fbfa58a4bd8ff1e32" name="a559f212445c0a87fbfa58a4bd8ff1e32"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryWriteLine</b> (string message)</td></tr>
+<tr class="memitem:a559f212445c0a87fbfa58a4bd8ff1e32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1SerialConnection.html#a559f212445c0a87fbfa58a4bd8ff1e32">TryWriteLine</a> (string message)</td></tr>
+<tr class="memdesc:a559f212445c0a87fbfa58a4bd8ff1e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a string to the serial port, and returns true/false for success.  <a href="classSensorAPI_1_1SerialConnection.html#a559f212445c0a87fbfa58a4bd8ff1e32">More...</a><br /></td></tr>
 <tr class="separator:a559f212445c0a87fbfa58a4bd8ff1e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8507e2247dd7ba97164d3e1ac5db2184"><td class="memItemLeft" align="right" valign="top"><a id="a8507e2247dd7ba97164d3e1ac5db2184" name="a8507e2247dd7ba97164d3e1ac5db2184"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryReadLine</b> (out string message)</td></tr>
+<tr class="memitem:a8507e2247dd7ba97164d3e1ac5db2184"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1SerialConnection.html#a8507e2247dd7ba97164d3e1ac5db2184">TryReadLine</a> (out string message)</td></tr>
+<tr class="memdesc:a8507e2247dd7ba97164d3e1ac5db2184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to read from the serial port into the output string message. Returns a bool indicitive of the success.  <a href="classSensorAPI_1_1SerialConnection.html#a8507e2247dd7ba97164d3e1ac5db2184">More...</a><br /></td></tr>
 <tr class="separator:a8507e2247dd7ba97164d3e1ac5db2184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -98,9 +98,131 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>messageDelay</b> = 500
 Properties</h2></td></tr>
 <tr class="memitem:a1cf7b8f2b3a91ab3401a945d17cea48b"><td class="memItemLeft" align="right" valign="top"><a id="a1cf7b8f2b3a91ab3401a945d17cea48b" name="a1cf7b8f2b3a91ab3401a945d17cea48b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>ReadTimeout</b><code> [getset]</code></td></tr>
-<tr class="memdesc:a1cf7b8f2b3a91ab3401a945d17cea48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration the TryReadLine will wait before returning null. <br /></td></tr>
+<tr class="memdesc:a1cf7b8f2b3a91ab3401a945d17cea48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration TryReadLine will wait before returning null. <br /></td></tr>
 <tr class="separator:a1cf7b8f2b3a91ab3401a945d17cea48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad8a4d105f49d089c0c06bf35262abe44" name="ad8a4d105f49d089c0c06bf35262abe44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a4d105f49d089c0c06bf35262abe44">&#9670;&nbsp;</a></span>SerialConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SensorAPI.SerialConnection.SerialConnection </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>portName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>baudRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>readTimeout</em> = <code>50</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes and opens the serial port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">portName</td><td>String: location of the port. </td></tr>
+    <tr><td class="paramname">baudRate</td><td>int: Baud Rate of the serial port. </td></tr>
+    <tr><td class="paramname">readTimeout</td><td>int: Delay before returning null on a read. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8507e2247dd7ba97164d3e1ac5db2184" name="a8507e2247dd7ba97164d3e1ac5db2184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8507e2247dd7ba97164d3e1ac5db2184">&#9670;&nbsp;</a></span>TryReadLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SensorAPI.SerialConnection.TryReadLine </td>
+          <td>(</td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attempts to read from the serial port into the output string message. Returns a bool indicitive of the success. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>out string: The message that is recieved, null if nothing returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a559f212445c0a87fbfa58a4bd8ff1e32" name="a559f212445c0a87fbfa58a4bd8ff1e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a559f212445c0a87fbfa58a4bd8ff1e32">&#9670;&nbsp;</a></span>TryWriteLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SensorAPI.SerialConnection.TryWriteLine </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a string to the serial port, and returns true/false for success. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>String: the message to write to the port. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>SensorCommunications/Serial.cs</li>
 </ul>
