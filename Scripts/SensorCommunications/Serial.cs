@@ -8,7 +8,7 @@ namespace SensorAPI
 public class SerialConnection
 {
     /** 
-     * @brief Duration the TryReadLine will wait before returning null.
+     * @brief Duration TryReadLine will wait before returning null.
      */
     public int ReadTimeout {
         get
@@ -20,6 +20,7 @@ public class SerialConnection
             port.ReadTimeout = ReadTimeout;
         }
     }
+
     /**
      * @brief TryWriteLine: The delay after writing a message to the port before returning.
      */
@@ -29,9 +30,9 @@ public class SerialConnection
 
     /**
      * @brief Initializes and opens the serial port.
-     * @property portName String: location of the port.
-     * @property baudRate int: Baud Rate of the serial port.
-     * @property readTimeout int: Delay before returning null on a read.
+     * @param portName String: location of the port.
+     * @param baudRate int: Baud Rate of the serial port.
+     * @param readTimeout int: Delay before returning null on a read.
      */
     public SerialConnection(string portName, int baudRate, int readTimeout = 50)
     {
@@ -42,7 +43,7 @@ public class SerialConnection
 
     /**
      * @brief Writes a string to the serial port, and returns true/false for success.
-     * @property message String: the message to write to the port.
+     * @param message String: the message to write to the port.
      */
     public bool TryWriteLine(string message)
     {
@@ -61,7 +62,7 @@ public class SerialConnection
 
     /**
      * @brief Attempts to read from the serial port into the output string message. Returns a bool indicitive of the success.
-     * @property message out string: The message that is recieved, null if nothing returned.
+     * @param message out string: The message that is recieved, null if nothing returned.
      */
     public bool TryReadLine(out string message)
     {
