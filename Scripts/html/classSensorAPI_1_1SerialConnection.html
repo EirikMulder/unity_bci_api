@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BCI Unity Asset: SensorAPI.IController Interface Reference</title>
+<title>BCI Unity Asset: SensorAPI.SerialConnection Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,51 +62,45 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceSensorAPI.html">SensorAPI</a></li><li class="navelem"><a class="el" href="interfaceSensorAPI_1_1IController.html">IController</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceSensorAPI.html">SensorAPI</a></li><li class="navelem"><a class="el" href="classSensorAPI_1_1SerialConnection.html">SerialConnection</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
-<a href="interfaceSensorAPI_1_1IController-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">SensorAPI.IController Interface Reference</div></div>
+<a href="classSensorAPI_1_1SerialConnection-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">SensorAPI.SerialConnection Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for SensorAPI.IController:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="interfaceSensorAPI_1_1IController.png" usemap="#SensorAPI.IController_map" alt=""/>
-  <map id="SensorAPI.IController_map" name="SensorAPI.IController_map">
-<area href="classSensorAPI_1_1HEGduino.html" alt="SensorAPI.HEGduino" shape="rect" coords="0,56,135,80"/>
-<area href="classTester.html" alt="Tester" shape="rect" coords="145,56,280,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a629feed14b0dc883dfb137fbb492fa42"><td class="memItemLeft" align="right" valign="top"><a id="a629feed14b0dc883dfb137fbb492fa42" name="a629feed14b0dc883dfb137fbb492fa42"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
-<tr class="separator:a629feed14b0dc883dfb137fbb492fa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcc59c6b0a40dae202119f016e45e143"><td class="memItemLeft" align="right" valign="top"><a id="abcc59c6b0a40dae202119f016e45e143" name="abcc59c6b0a40dae202119f016e45e143"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
-<tr class="separator:abcc59c6b0a40dae202119f016e45e143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a4d105f49d089c0c06bf35262abe44"><td class="memItemLeft" align="right" valign="top"><a id="ad8a4d105f49d089c0c06bf35262abe44" name="ad8a4d105f49d089c0c06bf35262abe44"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SerialConnection</b> (string portName, int baudRate, int readTimeout=50)</td></tr>
+<tr class="separator:ad8a4d105f49d089c0c06bf35262abe44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559f212445c0a87fbfa58a4bd8ff1e32"><td class="memItemLeft" align="right" valign="top"><a id="a559f212445c0a87fbfa58a4bd8ff1e32" name="a559f212445c0a87fbfa58a4bd8ff1e32"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryWriteLine</b> (string message)</td></tr>
+<tr class="separator:a559f212445c0a87fbfa58a4bd8ff1e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8507e2247dd7ba97164d3e1ac5db2184"><td class="memItemLeft" align="right" valign="top"><a id="a8507e2247dd7ba97164d3e1ac5db2184" name="a8507e2247dd7ba97164d3e1ac5db2184"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryReadLine</b> (out string message)</td></tr>
+<tr class="separator:a8507e2247dd7ba97164d3e1ac5db2184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a3f69b632ea806ae180c1daf5ad9368b3"><td class="memItemLeft" align="right" valign="top"><a id="a3f69b632ea806ae180c1daf5ad9368b3" name="a3f69b632ea806ae180c1daf5ad9368b3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>messageDelay</b> = 5000</td></tr>
+<tr class="separator:a3f69b632ea806ae180c1daf5ad9368b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:afa1017cb9a6a599a1f08dd14820c9a13"><td class="memItemLeft" align="right" valign="top"><a id="afa1017cb9a6a599a1f08dd14820c9a13" name="afa1017cb9a6a599a1f08dd14820c9a13"></a>
-Dictionary&lt; string, <a class="el" href="classSensorAPI_1_1DataList.html">DataList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Data</b><code> [get]</code></td></tr>
-<tr class="separator:afa1017cb9a6a599a1f08dd14820c9a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d4e2e750ae73b22fa432d93eb1d76c6"><td class="memItemLeft" align="right" valign="top"><a id="a6d4e2e750ae73b22fa432d93eb1d76c6" name="a6d4e2e750ae73b22fa432d93eb1d76c6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsConnected</b><code> [get]</code></td></tr>
-<tr class="separator:a6d4e2e750ae73b22fa432d93eb1d76c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac473552724ab05d6c4c2a2c9f287a58c"><td class="memItemLeft" align="right" valign="top"><a id="ac473552724ab05d6c4c2a2c9f287a58c" name="ac473552724ab05d6c4c2a2c9f287a58c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsUpdating</b><code> [get]</code></td></tr>
-<tr class="separator:ac473552724ab05d6c4c2a2c9f287a58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf7b8f2b3a91ab3401a945d17cea48b"><td class="memItemLeft" align="right" valign="top"><a id="a1cf7b8f2b3a91ab3401a945d17cea48b" name="a1cf7b8f2b3a91ab3401a945d17cea48b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ReadTimeout</b><code> [getset]</code></td></tr>
+<tr class="separator:a1cf7b8f2b3a91ab3401a945d17cea48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this interface was generated from the following file:<ul>
-<li>IController.cs</li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>SensorCommunications/Serial.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timeddata_0',['TimedData',['../classSensorAPI_1_1TimedData.html',1,'SensorAPI']]]
+  ['icontroller_0',['IController',['../interfaceSensorAPI_1_1IController.html',1,'SensorAPI']]]
 ];

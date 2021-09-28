@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['icontroller_0',['IController',['../interfaceSensorAPI_1_1IController.html',1,'SensorAPI']]]
+  ['hegduino_0',['HEGduino',['../classSensorAPI_1_1HEGduino.html',1,'SensorAPI']]]
 ];
