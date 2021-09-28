@@ -11,9 +11,9 @@ public class TestBehavior : MonoBehaviour
     public void Start()
     {
         heg = new HEGduino(portLocation);
-        heg.Start();
         heg.Data["brain_bloodflow"].limit = 30;
         heg.Data["brain_bloodflow"].deviationLimit = 1.5;
+        heg.Start();
         print("INIT");
         file = new StreamWriter("test_data.csv");
         file.WriteLine("data,avg1,avg0.5");
@@ -21,6 +21,7 @@ public class TestBehavior : MonoBehaviour
 
     public void Update()
     {
+        //TODO: Change IsUpdating name
         if (heg.IsUpdating)
         {
             //print("Data: " + (double)heg.Data["brain_bloodflow"]);

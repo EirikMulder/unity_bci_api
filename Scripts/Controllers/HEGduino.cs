@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using UnityEngine;
 using SensorAPI;
 
 namespace SensorAPI
@@ -34,6 +35,7 @@ public class HEGduino : IController
         fromHEG = new ConcurrentQueue<string>();
         thread = new Thread(ThreadLoop);
         thread.Start();
+        Thread.Sleep(2000);
         toHEG.Enqueue(StartMsg);
     }
 
@@ -78,9 +80,12 @@ public class HEGduino : IController
             }
             if (hegDevice.TryReadLine(out string fromMessage))
             {
-                fromHEG.Enqueue(fromMessage);
+                //fromHEG.Enqueue(fromMessage);
+                string[] data = fromMessage.Split('|');
+                Data["brain_bloodflow"].Add(Convert.ToDouble(data[3]));
+                Debug.Log(data);
             }
-            else
+                else
             {
                 IsConnected = false;
             }
