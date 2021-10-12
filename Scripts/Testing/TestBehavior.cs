@@ -2,6 +2,8 @@ using UnityEngine;
 using SensorAPI;
 using System.IO;
 
+namespace SensorAPI {
+namespace Testing {
 public class TestBehavior : MonoBehaviour
 {
     HEGduino heg;
@@ -10,11 +12,12 @@ public class TestBehavior : MonoBehaviour
 
     public void Start()
     {
+        print("Start INIT");
         heg = new HEGduino(portLocation);
         heg.Data["brain_bloodflow"].limit = 30;
         heg.Data["brain_bloodflow"].deviationLimit = 1.5;
         heg.Start();
-        print("INIT");
+        print("Finish INIT");
         file = new StreamWriter("test_data.csv");
         file.WriteLine("data,avg1,avg0.5");
     }
@@ -25,8 +28,8 @@ public class TestBehavior : MonoBehaviour
         if (heg.IsUpdating)
         {
             //print("Data: " + (double)heg.Data["brain_bloodflow"]);
-            print("Amount: " + heg.Data["brain_bloodflow"].data.Count);
-            print("AVG Data: " + heg.Data["brain_bloodflow"].WeightedAverage(0.5));
+            //print("Amount: " + heg.Data["brain_bloodflow"].Count);
+            //print("AVG Data: " + heg.Data["brain_bloodflow"].WeightedAverage(0.5));
             file.WriteLine(heg.Data["brain_bloodflow"] + "," + heg.Data["brain_bloodflow"].WeightedAverage(1) + "," + heg.Data["brain_bloodflow"].WeightedAverage(0.5));
         }
         if (!heg.IsConnected)
@@ -35,3 +38,5 @@ public class TestBehavior : MonoBehaviour
         }
     }
 }
+}
+} // namespace SensorAPI

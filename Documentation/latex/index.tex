@@ -1,0 +1,29 @@
+\label{index_md__Users_eirikmulder_Projects_Unity_unity_bci_api_Assets_unity_bci_api_Documentation_README}%
+\Hypertarget{index_md__Users_eirikmulder_Projects_Unity_unity_bci_api_Assets_unity_bci_api_Documentation_README}%
+The Unity-\/\+BCI API allows game developers to use the data from brain-\/computer interfaces, such as EEG or HEG systems, directly in their games.
+
+Setting up the asset is as simple as adding the asset folder, creating a controller, and adding the device types you want to use. Data can be accessed elegantly and easily, and can be used directly or averaged.\hypertarget{index_autotoc_md1}{}\doxysubsection{Quick Start\+:}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Add the unity\+\_\+bci\+\_\+api folder to your Assets folder.
+\item Create an empty, or use an existing empty and add the Main\+Controller script to it.
+\item Create a reference to the script inside your main code.
+\item Use the main\+Controller.\+Add() method to add sensors\+: {\ttfamily main\+Controller.\+Add(new HEGduino(new Serial\+Connection(\char`\"{}/dev/tty.\+usbserial-\/01\+DFAAE3\char`\"{}))}
+\begin{DoxyItemize}
+\item {\itshape You can initialize both the connection and the device controller seperately and then add them, here we do it inline.}
+\end{DoxyItemize}
+\item Run main\+Controller.\+Start()
+\item Access the data\+: {\ttfamily Print(main\+Controller.\+brain\+\_\+bloodflow)} / {\ttfamily x = main\+Controller.\+heartrate.\+Weighted\+Average(0.\+1)}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysubsection{Sensors\+:}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item HEGduino
+\item Emoti\+Bit (WIP)
+\item Cyton\+EEG (WIP)
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{Data\+:}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item brain\+\_\+bloodflow (HEGduino)
+\item heartrate (Emoti\+Bit) (WIP)
+\item ... more being added. 
+\end{DoxyItemize}

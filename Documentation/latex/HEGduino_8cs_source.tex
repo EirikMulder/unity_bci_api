@@ -1,0 +1,108 @@
+\hypertarget{HEGduino_8cs_source}{}\doxysection{HEGduino.\+cs}
+\label{HEGduino_8cs_source}\index{Controllers/HEGduino.cs@{Controllers/HEGduino.cs}}
+\mbox{\hyperlink{HEGduino_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Threading;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Concurrent;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00005}00005 \textcolor{keyword}{using} UnityEngine;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00006}00006 \textcolor{keyword}{using} \mbox{\hyperlink{namespaceSensorAPI}{SensorAPI}};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceSensorAPI}{SensorAPI}}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00010}\mbox{\hyperlink{namespaceSensorAPI_1_1Controllers}{00010}} \textcolor{keyword}{namespace }Controllers}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00017}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino}{00017}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino}{HEGduino}} : IController}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00024}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ae93941df5d8a72cd66c871adf48d49fd}{00024}}     \textcolor{keyword}{public} Dictionary<string, DataList> \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ae93941df5d8a72cd66c871adf48d49fd}{Data}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00028}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{00028}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{IsConnected}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00032}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ad177741ecb93462957b923f63cb53498}{00032}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ad177741ecb93462957b923f63cb53498}{IsUpdating}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00034}00034     \textcolor{comment}{// Internal vars}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00035}00035     SerialConnection hegDevice;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00036}00036     Thread thread;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00037}00037     \textcolor{keywordtype}{string} portLocation;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00038}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2341f03eb6690041623715b53099adee}{00038}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2341f03eb6690041623715b53099adee}{killThread}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00039}00039     ConcurrentQueue<string> toHEG;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00040}00040     \textcolor{comment}{//ConcurrentQueue<string> fromHEG;}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00042}00042     \textcolor{comment}{// Constants}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00043}00043     \textcolor{keyword}{const} \textcolor{keywordtype}{string} StartMsg = \textcolor{stringliteral}{"{}f"{}};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00044}00044     \textcolor{keyword}{const} \textcolor{keywordtype}{string} StopMsg = \textcolor{stringliteral}{"{}t"{}};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00045}00045     \textcolor{keyword}{const} \textcolor{keywordtype}{int} BaudRate = 115200;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00051}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a4b5da44c3ed35086249474a195674119}{00051}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a4b5da44c3ed35086249474a195674119}{Start}}()}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00053}00053         \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2341f03eb6690041623715b53099adee}{killThread}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00054}00054         \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ad177741ecb93462957b923f63cb53498}{IsUpdating}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00055}00055         toHEG = \textcolor{keyword}{new} ConcurrentQueue<string>();}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00056}00056         \textcolor{comment}{//fromHEG = new ConcurrentQueue<string>();}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00057}00057         thread = \textcolor{keyword}{new} Thread(ThreadLoop);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00058}00058         thread.Start();}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00059}00059         Thread.Sleep(2000);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00060}00060         Debug.Log(\textcolor{stringliteral}{"{}STARTING"{}});}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00061}00061         toHEG.Enqueue(StartMsg);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00068}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a01a3636a8e359f336dfe08e645573f84}{00068}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a01a3636a8e359f336dfe08e645573f84}{Stop}}()}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00069}00069     \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00070}00070         \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ad177741ecb93462957b923f63cb53498}{IsUpdating}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00071}00071         \textcolor{keywordflow}{if} (thread.IsAlive)}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00072}00072         \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00073}00073             toHEG.Enqueue(StopMsg);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00074}00074             \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2341f03eb6690041623715b53099adee}{killThread}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00075}00075         \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00083}\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2e2d8af1036c0dafd4f500747495da3a}{00083}}     \textcolor{keyword}{public} \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2e2d8af1036c0dafd4f500747495da3a}{HEGduino}}(\textcolor{keywordtype}{string} portLocation)}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00084}00084     \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00085}00085         \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ae93941df5d8a72cd66c871adf48d49fd}{Data}} = \textcolor{keyword}{new} Dictionary<string, DataList>() \{\{ \textcolor{stringliteral}{"{}brain\_bloodflow"{}}, \textcolor{keyword}{new} \mbox{\hyperlink{classDataList}{DataList}}() \}\};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00086}00086         this.portLocation = portLocation;}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00087}00087         hegDevice = \textcolor{keyword}{new} SerialConnection(portLocation, BaudRate, readTimeout: 50);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00088}00088         \textcolor{comment}{// TODO: check connection}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00089}00089         \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{IsConnected}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00092}00092     \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino}{\string~HEGduino}}()}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00093}00093     \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00094}00094         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{IsConnected}})}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00095}00095         \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00096}00096             \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a01a3636a8e359f336dfe08e645573f84}{Stop}}();}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00097}00097             \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{IsConnected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00098}00098         \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00101}00101     \textcolor{keywordtype}{void} ThreadLoop()}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00102}00102     \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00103}00103         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a2341f03eb6690041623715b53099adee}{killThread}})}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00104}00104         \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00105}00105             \textcolor{keywordflow}{if} (toHEG.TryDequeue(out \textcolor{keywordtype}{string} toMessage))}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00106}00106             \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00107}00107                 Debug.Log(\textcolor{stringliteral}{"{}Thread recieved: "{}} + toMessage);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00108}00108                 \textcolor{keywordflow}{if} (!hegDevice.TryWriteLine(toMessage))}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00109}00109                 \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00110}00110                     \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{IsConnected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00111}00111                 \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00112}00112             \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00113}00113             Debug.Log(toMessage);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00114}00114             \textcolor{keywordflow}{if} (hegDevice.TryReadLine(out \textcolor{keywordtype}{string} fromMessage))}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00115}00115             \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00116}00116                 Debug.Log(fromMessage);}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00117}00117                 \textcolor{keywordflow}{if} (fromMessage.Contains(\textcolor{stringliteral}{"{}|"{}}))}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00118}00118                 \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00119}00119                     \textcolor{keywordtype}{string}[] data = fromMessage.Split(\textcolor{charliteral}{'|'});}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00120}00120                     \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_ae93941df5d8a72cd66c871adf48d49fd}{Data}}[\textcolor{stringliteral}{"{}brain\_bloodflow"{}}].Add(Convert.ToDouble(data[3]));}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00121}00121                 \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00122}00122             \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00123}00123                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00124}00124             \{}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00125}00125                 \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a44d44293cce73b6c37cc1195dd864435}{IsConnected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00126}00126             \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00127}00127         \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00129}00129 \}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00130}00130 \} \textcolor{comment}{// Namespace Controllers}}
+\DoxyCodeLine{\Hypertarget{HEGduino_8cs_source_l00131}00131 \} \textcolor{comment}{// Namespace SensorAPI}}
+
+\end{DoxyCode}

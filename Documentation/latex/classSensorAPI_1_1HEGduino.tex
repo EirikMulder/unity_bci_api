@@ -1,0 +1,167 @@
+\hypertarget{classSensorAPI_1_1HEGduino}{}\doxysection{Sensor\+API.\+HEGduino Class Reference}
+\label{classSensorAPI_1_1HEGduino}\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+
+
+Controls a single \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device. Connects to and manages a \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device, connected via serial. Provides data output from the device.  
+
+
+Inheritance diagram for Sensor\+API.\+HEGduino\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSensorAPI_1_1HEGduino}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSensorAPI_1_1HEGduino_a3d98bc98256e4ae5f564f6009176751b}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}. Sets Is\+Updating to true, launches the management thread, and sends the start message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSensorAPI_1_1HEGduino_abebc64b7b3f809b9f534c0feadc233dc}{Stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}. Sets Is\+Updating to false, kills the management thread, and sends the stop message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}{HEGduino}} (string port\+Location)
+\begin{DoxyCompactList}\small\item\em Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets Is\+Connected to true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSensorAPI_1_1HEGduino_a1fb8ce215fa66d16eaeba831742f9a9a}{kill\+Thread}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}} $>$ \mbox{\hyperlink{classSensorAPI_1_1HEGduino_a4541c23d226283f07faab28b31bfb7d6}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Data output from the device. A dictionary in the format\+: Label (string)\+: \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}}. Use the \textquotesingle{}brain\+\_\+bloodflow\textquotesingle{} label to access the \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}} for bloodflow from the HEG. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSensorAPI_1_1HEGduino_aaba196b649ec2aab361304cbfa00cf89}{Is\+Connected}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em bool\+: Is the device connected to the serial port. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSensorAPI_1_1HEGduino_aeb425281bad1dbb31c6a893f5d13e49d}{Is\+Updating}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em bool\+: Is the data field refreshing (false if device is connected but disabled) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls a single \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device. Connects to and manages a \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}} device, connected via serial. Provides data output from the device. 
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00015}{15}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}\label{classSensorAPI_1_1HEGduino_ac8ea365b01f2d6ae6ee975192a4918b1}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!HEGduino@{HEGduino}}
+\index{HEGduino@{HEGduino}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{HEGduino()}{HEGduino()}}
+{\footnotesize\ttfamily Sensor\+API.\+HEGduino.\+HEGduino (\begin{DoxyParamCaption}\item[{string}]{port\+Location }\end{DoxyParamCaption})}
+
+
+
+Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets Is\+Connected to true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Location} & A string with the serial port location (COMx on windows, file location on linux/macos). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00081}{81}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_a3d98bc98256e4ae5f564f6009176751b}\label{classSensorAPI_1_1HEGduino_a3d98bc98256e4ae5f564f6009176751b}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!Start@{Start}}
+\index{Start@{Start}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Sensor\+API.\+HEGduino.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}. Sets Is\+Updating to true, launches the management thread, and sends the start message. 
+
+
+
+Implements \mbox{\hyperlink{interfaceSensorAPI_1_1IController_a629feed14b0dc883dfb137fbb492fa42}{Sensor\+API.\+IController}}.
+
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00049}{49}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_abebc64b7b3f809b9f534c0feadc233dc}\label{classSensorAPI_1_1HEGduino_abebc64b7b3f809b9f534c0feadc233dc}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!Stop@{Stop}}
+\index{Stop@{Stop}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Sensor\+API.\+HEGduino.\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the \mbox{\hyperlink{classSensorAPI_1_1HEGduino}{HEGduino}}. Sets Is\+Updating to false, kills the management thread, and sends the stop message. 
+
+
+
+Implements \mbox{\hyperlink{interfaceSensorAPI_1_1IController_abcc59c6b0a40dae202119f016e45e143}{Sensor\+API.\+IController}}.
+
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00066}{66}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_a1fb8ce215fa66d16eaeba831742f9a9a}\label{classSensorAPI_1_1HEGduino_a1fb8ce215fa66d16eaeba831742f9a9a}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!killThread@{killThread}}
+\index{killThread@{killThread}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{killThread}{killThread}}
+{\footnotesize\ttfamily bool Sensor\+API.\+HEGduino.\+kill\+Thread = false}
+
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00036}{36}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_a4541c23d226283f07faab28b31bfb7d6}\label{classSensorAPI_1_1HEGduino_a4541c23d226283f07faab28b31bfb7d6}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!Data@{Data}}
+\index{Data@{Data}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}}$>$ Sensor\+API.\+HEGduino.\+Data\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Data output from the device. A dictionary in the format\+: Label (string)\+: \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}}. Use the \textquotesingle{}brain\+\_\+bloodflow\textquotesingle{} label to access the \mbox{\hyperlink{classSensorAPI_1_1DataList}{Data\+List}} for bloodflow from the HEG. 
+
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00022}{22}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_aaba196b649ec2aab361304cbfa00cf89}\label{classSensorAPI_1_1HEGduino_aaba196b649ec2aab361304cbfa00cf89}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{IsConnected}{IsConnected}}
+{\footnotesize\ttfamily bool Sensor\+API.\+HEGduino.\+Is\+Connected\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+bool\+: Is the device connected to the serial port. 
+
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00026}{26}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1HEGduino_aeb425281bad1dbb31c6a893f5d13e49d}\label{classSensorAPI_1_1HEGduino_aeb425281bad1dbb31c6a893f5d13e49d}} 
+\index{SensorAPI.HEGduino@{SensorAPI.HEGduino}!IsUpdating@{IsUpdating}}
+\index{IsUpdating@{IsUpdating}!SensorAPI.HEGduino@{SensorAPI.HEGduino}}
+\doxysubsubsection{\texorpdfstring{IsUpdating}{IsUpdating}}
+{\footnotesize\ttfamily bool Sensor\+API.\+HEGduino.\+Is\+Updating\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+bool\+: Is the data field refreshing (false if device is connected but disabled) 
+
+
+
+Definition at line \mbox{\hyperlink{HEGduino_8cs_source_l00030}{30}} of file \mbox{\hyperlink{HEGduino_8cs_source}{HEGduino.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{HEGduino_8cs}{HEGduino.\+cs}}\end{DoxyCompactItemize}

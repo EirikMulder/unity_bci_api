@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace SensorAPI
 {
+namespace Data
+{
 /**
  * @brief A double value (value) paired with a DateTime timestamp (time)
  */
@@ -117,4 +119,5 @@ public class DataList
         return average;
     }
 }
+} // Namespace Data
 } // Namespace BCIData

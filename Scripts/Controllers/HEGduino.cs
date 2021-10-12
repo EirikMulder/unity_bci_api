@@ -3,9 +3,13 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using UnityEngine;
-using SensorAPI;
+using SensorAPI.Connections;
+using SensorAPI.Data;
+using SensorAPI.Interfaces;
 
 namespace SensorAPI
+{
+namespace Controllers
 {
 /**
  * @brief Controls a single HEGduino device.
@@ -33,9 +37,9 @@ public class HEGduino : IController
     SerialConnection hegDevice;
     Thread thread;
     string portLocation;
-    bool killThread = false;
+    public bool killThread = false;
     ConcurrentQueue<string> toHEG;
-    ConcurrentQueue<string> fromHEG;
+    //ConcurrentQueue<string> fromHEG;
 
     // Constants
     const string StartMsg = "f";
@@ -51,10 +55,11 @@ public class HEGduino : IController
         killThread = false;
         IsUpdating = true;
         toHEG = new ConcurrentQueue<string>();
-        fromHEG = new ConcurrentQueue<string>();
+        //fromHEG = new ConcurrentQueue<string>();
         thread = new Thread(ThreadLoop);
         thread.Start();
         Thread.Sleep(2000);
+        Debug.Log("STARTING");
         toHEG.Enqueue(StartMsg);
     }
 
@@ -101,17 +106,21 @@ public class HEGduino : IController
         {
             if (toHEG.TryDequeue(out string toMessage))
             {
+                Debug.Log("Thread recieved: " + toMessage);
                 if (!hegDevice.TryWriteLine(toMessage))
                 {
                     IsConnected = false;
                 }
             }
+            Debug.Log(toMessage);
             if (hegDevice.TryReadLine(out string fromMessage))
             {
-                //fromHEG.Enqueue(fromMessage);
-                string[] data = fromMessage.Split('|');
-                Data["brain_bloodflow"].Add(Convert.ToDouble(data[3]));
-                Debug.Log(data);
+                Debug.Log(fromMessage);
+                if (fromMessage.Contains("|"))
+                {
+                    string[] data = fromMessage.Split('|');
+                    Data["brain_bloodflow"].Add(Convert.ToDouble(data[3]));
+                }
             }
                 else
             {
@@ -120,4 +129,5 @@ public class HEGduino : IController
         }
     }
 }
+} // Namespace Controllers
 } // Namespace SensorAPI

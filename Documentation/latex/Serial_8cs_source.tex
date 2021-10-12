@@ -1,0 +1,81 @@
+\hypertarget{Serial_8cs_source}{}\doxysection{Serial.\+cs}
+\label{Serial_8cs_source}\index{Connections/Serial.cs@{Connections/Serial.cs}}
+\mbox{\hyperlink{Serial_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00002}00002 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00003}00003 \textcolor{keyword}{using} System.IO.Ports;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00004}00004 \textcolor{keyword}{using} UnityEngine;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Threading;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00007}\mbox{\hyperlink{namespaceSensorAPI}{00007}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceSensorAPI}{SensorAPI}}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00009}\mbox{\hyperlink{namespaceSensorAPI_1_1Connections}{00009}} \textcolor{keyword}{namespace }Connections}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00014}\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection}{00014}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection}{SerialConnection}}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00019}\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a2410196c6c6c818b343a903ca24df0e8}{00019}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a2410196c6c6c818b343a903ca24df0e8}{ReadTimeout}} \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00020}00020         \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00021}00021         \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00022}00022             \textcolor{keywordflow}{return} port.ReadTimeout;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00023}00023         \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00024}00024         \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00026}00026             port.ReadTimeout = \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a2410196c6c6c818b343a903ca24df0e8}{ReadTimeout}};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00027}00027         \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00033}\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a1a95afd52a3a32d07ce5a602720f97f8}{00033}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a1a95afd52a3a32d07ce5a602720f97f8}{messageDelay}} = 5000;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00035}00035     SerialPort port;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00043}\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_add0602073a96dee9ffbeedbbe20a7a25}{00043}}     \textcolor{keyword}{public} \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_add0602073a96dee9ffbeedbbe20a7a25}{SerialConnection}}(\textcolor{keywordtype}{string} portName, \textcolor{keywordtype}{int} baudRate, \textcolor{keywordtype}{int} readTimeout = 50)}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00044}00044     \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00045}00045         port = \textcolor{keyword}{new} SerialPort(portName, baudRate);}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00046}00046         \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a2410196c6c6c818b343a903ca24df0e8}{ReadTimeout}} = readTimeout;}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00047}00047         port.Open();}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00054}\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_adf83ac862aa72fa3d9927c78698da8e3}{00054}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_adf83ac862aa72fa3d9927c78698da8e3}{TryWriteLine}}(\textcolor{keywordtype}{string} message)}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00056}00056         \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00057}00057         \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00058}00058             port.WriteLine(message);}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00059}00059             port.BaseStream.Flush();}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00060}00060             Debug.Log(\textcolor{stringliteral}{"{}Wrote: "{}} + message);}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00061}00061             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00062}00062         \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00063}00063         \textcolor{keywordflow}{catch} (IOException)}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00064}00064         \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00065}00065             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00066}00066         \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00073}\mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a349ca112560edcc81f7660c75576d980}{00073}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSensorAPI_1_1Connections_1_1SerialConnection_a349ca112560edcc81f7660c75576d980}{TryReadLine}}(out \textcolor{keywordtype}{string} message)}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00074}00074     \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00075}00075         \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00076}00076         \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00077}00077             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00078}00078             \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00079}00079                 message = port.ReadLine();}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00080}00080             \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00081}00081             \textcolor{keywordflow}{catch} (TimeoutException)}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00082}00082             \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00083}00083                 Debug.Log(\textcolor{stringliteral}{"{}TIMEOUT"{}});}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00084}00084                 message = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00085}00085                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00086}00086             \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00087}00087             port.BaseStream.Flush();}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00088}00088             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00089}00089         \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00090}00090         \textcolor{keywordflow}{catch} (IOException)}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00091}00091         \{}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00092}00092             message = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00093}00093             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00095}00095     \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00096}00096 \}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00097}00097 \} \textcolor{comment}{// Namespace Connections}}
+\DoxyCodeLine{\Hypertarget{Serial_8cs_source_l00098}00098 \} \textcolor{comment}{// Namespace SensorAPI}}
+
+\end{DoxyCode}

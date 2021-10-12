@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
-using SensorAPI;
+using SensorAPI.Data;
+using SensorAPI.Interfaces;
 
 namespace SensorAPI
+{
+namespace Testing
 {
 /** @brief A test controller emulating a fake device.
  *  Can be used to test applications which rely on a device,
@@ -35,5 +38,6 @@ public class Tester : IController
     ~Tester()
     {
     }
+}
 }
 } // SensorAPI

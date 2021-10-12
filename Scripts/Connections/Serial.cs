@@ -1,9 +1,12 @@
 using System;
 using System.IO;
 using System.IO.Ports;
-using Threading;
+using UnityEngine;
+using System.Threading;
 
 namespace SensorAPI
+{
+namespace Connections
 {
 /**
  * @brief Manages a serial connection
@@ -40,8 +43,8 @@ public class SerialConnection
     public SerialConnection(string portName, int baudRate, int readTimeout = 50)
     {
         port = new SerialPort(portName, baudRate);
+        ReadTimeout = readTimeout;
         port.Open();
-        this.ReadTimeout = readTimeout;
     }
 
     /**
@@ -54,7 +57,7 @@ public class SerialConnection
         {
             port.WriteLine(message);
             port.BaseStream.Flush();
-            Thread.Sleep(messageDelay);
+            Debug.Log("Wrote: " + message);
             return true;
         }
         catch (IOException)
@@ -77,6 +80,7 @@ public class SerialConnection
             }
             catch (TimeoutException)
             {
+                Debug.Log("TIMEOUT");
                 message = null;
                 return true;
             }
@@ -90,4 +94,5 @@ public class SerialConnection
         }
     }
 }
+} // Namespace Connections
 } // Namespace SensorAPI

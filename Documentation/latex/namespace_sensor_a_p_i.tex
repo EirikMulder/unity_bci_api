@@ -1,0 +1,17 @@
+\hypertarget{namespace_sensor_a_p_i}{}\doxysection{Sensor\+API Namespace Reference}
+\label{namespace_sensor_a_p_i}\index{SensorAPI@{SensorAPI}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list}{Data\+List}}
+\begin{DoxyCompactList}\small\item\em A list of \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{Timed\+Data}} values. Keeps track of the number of values, the max number of values (for rolling averages), and the maximum absolute value of an added value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino}{HEGduino}}
+\begin{DoxyCompactList}\small\item\em Controls a single \mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino}{HEGduino}} device. Connects to and manages a \mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino}{HEGduino}} device, connected via serial. Provides data output from the device. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_sensor_a_p_i_1_1_i_controller}{IController}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{interface_sensor_a_p_i_1_1_i_controller}{IController}} interface defines how a BCI device driver should behave. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sensor_a_p_i_1_1_serial_connection}{Serial\+Connection}}
+\begin{DoxyCompactList}\small\item\em Manages a serial connection. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sensor_a_p_i_1_1_tester}{Tester}}
+\begin{DoxyCompactList}\small\item\em A test controller emulating a fake device. Can be used to test applications which rely on a device, as well as testing out the Data library on fake data sets. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{Timed\+Data}}
+\begin{DoxyCompactList}\small\item\em A double value (value) paired with a Date\+Time timestamp (time) \end{DoxyCompactList}\end{DoxyCompactItemize}

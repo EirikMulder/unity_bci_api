@@ -1,0 +1,97 @@
+\hypertarget{_data_8cs_source}{}\doxysection{Data.\+cs}
+\label{_data_8cs_source}\index{Scripts/Data.cs@{Scripts/Data.cs}}
+\mbox{\hyperlink{_data_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00001}00001 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00005}00005 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_sensor_a_p_i}{SensorAPI}}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00010}\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{00010}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{TimedData}}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00013}\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_aa7e3323d2ba5c751dd8792125409c176}{00013}}     \textcolor{keyword}{public} DateTime \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_aa7e3323d2ba5c751dd8792125409c176}{time}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00015}\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{00015}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{value}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00018}\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a490c1cc0a3526ec7406421d9494cd7b7}{00018}}     \textcolor{keyword}{public} \textcolor{keyword}{static} implicit \textcolor{keyword}{operator} double(\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{TimedData}} data) => data.value;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00021}\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_add708e1a3dccc06ad811e59d4719932d}{00021}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_add708e1a3dccc06ad811e59d4719932d}{TimedData}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{value}}, DateTime \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_aa7e3323d2ba5c751dd8792125409c176}{time}})}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00023}00023         this.time = \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_aa7e3323d2ba5c751dd8792125409c176}{time}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00024}00024         this.value = \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{value}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00028}\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_aa6e54d56e9e4830fdfc632b59063722d}{00028}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_aa6e54d56e9e4830fdfc632b59063722d}{TimedData}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{value}})}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00029}00029     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00030}00030         this.time = DateTime.Now;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00031}00031         this.value = \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{value}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00039}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list}{00039}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list}{DataList}}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00040}00040 \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00041}00041     List<TimedData> data;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00043}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{00043}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{Count}} \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} data.Count; \} \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00047}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{00047}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00052}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_ae6385930f5a30df69a1aedc8f9e0ba0d}{00052}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_ae6385930f5a30df69a1aedc8f9e0ba0d}{deviationLimit}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00055}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a5d929b32a7262fd72f5738779ba2f05b}{00055}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a5d929b32a7262fd72f5738779ba2f05b}{DataList}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}} = 10, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_ae6385930f5a30df69a1aedc8f9e0ba0d}{deviationLimit}} = 0)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00056}00056     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00057}00057         data = \textcolor{keyword}{new} List<TimedData>();}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00058}00058         this.limit = \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00059}00059         this.deviationLimit = \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_ae6385930f5a30df69a1aedc8f9e0ba0d}{deviationLimit}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00063}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_af0464af3f95a3d5fcd19175f311277ca}{00063}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_af0464af3f95a3d5fcd19175f311277ca}{DataList}}(List<TimedData> data, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}} = 10, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_ae6385930f5a30df69a1aedc8f9e0ba0d}{deviationLimit}} = 0)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00064}00064     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00065}00065         this.data = data;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00066}00066         this.limit = \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00067}00067         this.deviationLimit = \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_ae6385930f5a30df69a1aedc8f9e0ba0d}{deviationLimit}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00070}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a7e53ac7bff2fc8be3bd2a2b29761f21c}{00070}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{TimedData}} \textcolor{keyword}{this}[\textcolor{keywordtype}{int} i]}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00072}00072         \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} data[i]; \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00073}00073         \textcolor{keyword}{set} \{ data[i] = value; \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00076}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a6d77a1ef7bdb5bb2e14e6b00b75afad2}{00076}}     \textcolor{keyword}{public} \textcolor{keyword}{static} implicit \textcolor{keyword}{operator} double(\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list}{DataList}} x) => x[x.Count-\/1].\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data_a05366f8a1764a1385b47783427d5a0f0}{value}};}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00079}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a62bb8be2f40a43cd486ef5a4e6ca1411}{00079}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a62bb8be2f40a43cd486ef5a4e6ca1411}{Add}}(\textcolor{keywordtype}{double} value)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00080}00080     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00081}00081         data.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{TimedData}}(value, DateTime.Now));}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00082}00082         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{Count}} > \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}}) \{ data.RemoveRange(0, \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{Count}}-\/\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}}); \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00086}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a922282b5db06fb49a3a50d9c90808e4e}{00086}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a922282b5db06fb49a3a50d9c90808e4e}{Add}}(\textcolor{keywordtype}{double} value, DateTime time)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00087}00087     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00088}00088         data.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{TimedData}}(value, time));}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00089}00089         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{Count}} > \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}}) \{ data.RemoveRange(0, \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{Count}}-\/\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_adc0ea055f482f12b84fc7252cf77b049}{limit}}); \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00093}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a2d48b4f2f681628b12048edfda7327d5}{00093}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a2d48b4f2f681628b12048edfda7327d5}{Add}}(\mbox{\hyperlink{class_sensor_a_p_i_1_1_timed_data}{TimedData}} value)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00094}00094     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00095}00095         data.Add(value);}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00099}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a8c6e18bbc38a1250fc6305d5b77b5bea}{00099}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a8c6e18bbc38a1250fc6305d5b77b5bea}{Average}}()}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00100}00100     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00101}00101         \textcolor{keywordflow}{return} data.Average(x => x.value);}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00102}00102     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00107}\mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a867e01dd95c2f1d0f0125910f218593a}{00107}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a867e01dd95c2f1d0f0125910f218593a}{WeightedAverage}}(\textcolor{keywordtype}{double} weight)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00108}00108     \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00109}00109         \textcolor{keywordtype}{double} average = 0;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00110}00110         \textcolor{keywordtype}{double} added = 0;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00111}00111         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sensor_a_p_i_1_1_data_list_a1f278bfa6b2f55afd21191ce34b6441f}{Count}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00112}00112         \{}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00113}00113             average += data[i].value * (i + 1) * weight;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00114}00114             added += (i + 1) * weight;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00115}00115         \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00116}00116         average /= added;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00117}00117         \textcolor{keywordflow}{return} average;}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00119}00119 \}}
+\DoxyCodeLine{\Hypertarget{_data_8cs_source_l00120}00120 \} \textcolor{comment}{// Namespace BCIData}}
+
+\end{DoxyCode}

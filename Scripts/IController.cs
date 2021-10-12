@@ -1,7 +1,9 @@
 using System.Collections.Generic;
-using System;
+using SensorAPI.Data;
 
 namespace SensorAPI
+{
+namespace Interfaces
 {
 /** @brief IController interface defines how a BCI device driver should
  * behave.
@@ -28,4 +30,5 @@ public interface IController
     /** @brief Stop data collection. */
     void Stop();
 }
+} // namespace Interfaces
 } // namespace SensorAPI

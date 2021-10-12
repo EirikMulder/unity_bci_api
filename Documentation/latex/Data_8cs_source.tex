@@ -1,0 +1,99 @@
+\hypertarget{Data_8cs_source}{}\doxysection{Data.\+cs}
+\mbox{\hyperlink{Data_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00001}00001 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00005}00005 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceSensorAPI}{SensorAPI}}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00007}00007 \textcolor{keyword}{namespace }Data}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00012}\mbox{\hyperlink{classTimedData}{00012}} public class \mbox{\hyperlink{classTimedData}{TimedData}}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00015}\mbox{\hyperlink{classTimedData_a1eb191c127f2568217523bdfd75a3fb2}{00015}}     \textcolor{keyword}{public} DateTime \mbox{\hyperlink{classTimedData_a1eb191c127f2568217523bdfd75a3fb2}{time}};}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00017}\mbox{\hyperlink{classTimedData_a3dd70e792e4779c9461759949051df03}{00017}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classTimedData_a3dd70e792e4779c9461759949051df03}{value}};}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00020}\mbox{\hyperlink{classTimedData_a25f8cd0415bc439642e05f02639cf209}{00020}}     \textcolor{keyword}{public} \textcolor{keyword}{static} implicit \textcolor{keyword}{operator} double(\mbox{\hyperlink{classTimedData}{TimedData}} data) => data.value;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00023}\mbox{\hyperlink{classTimedData_a9ec1d840fc091c1519e745bbed1a1bd3}{00023}}     \textcolor{keyword}{public} \mbox{\hyperlink{classTimedData_a9ec1d840fc091c1519e745bbed1a1bd3}{TimedData}}(\textcolor{keywordtype}{double} value, DateTime time)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00024}00024     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00025}00025         this.time = time;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00026}00026         this.value = value;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00030}\mbox{\hyperlink{classTimedData_af3fde2c018de00d56d5c778f1f312925}{00030}}     \textcolor{keyword}{public} \mbox{\hyperlink{classTimedData_af3fde2c018de00d56d5c778f1f312925}{TimedData}}(\textcolor{keywordtype}{double} value)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00031}00031     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00032}00032         this.time = DateTime.Now;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00033}00033         this.value = value;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00041}\mbox{\hyperlink{classDataList}{00041}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classDataList}{DataList}}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00043}00043     List<TimedData> data;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00045}\mbox{\hyperlink{classDataList_aa5a31c0e761323fb11485dc18518c0ec}{00045}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} Count \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} data.\mbox{\hyperlink{classDataList_aa5a31c0e761323fb11485dc18518c0ec}{Count}}; \} \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00049}\mbox{\hyperlink{classDataList_af94fba6b7cb2a7be66dfade939a838e6}{00049}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classDataList_af94fba6b7cb2a7be66dfade939a838e6}{limit}};}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00054}\mbox{\hyperlink{classDataList_ac9c67ed1a2af2bb77de9eca02db9d0c6}{00054}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classDataList_ac9c67ed1a2af2bb77de9eca02db9d0c6}{deviationLimit}};}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00057}\mbox{\hyperlink{classDataList_ace9d5d0134cd5d841ba943a8de40c417}{00057}}     \textcolor{keyword}{public} \mbox{\hyperlink{classDataList_ace9d5d0134cd5d841ba943a8de40c417}{DataList}}(\textcolor{keywordtype}{int} limit = 10, \textcolor{keywordtype}{int} deviationLimit = 0)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00059}00059         data = \textcolor{keyword}{new} List<TimedData>();}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00060}00060         this.limit = limit;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00061}00061         this.deviationLimit = deviationLimit;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00065}\mbox{\hyperlink{classDataList_a1846b9cb0b23b72905ce26919a8cf166}{00065}}     \textcolor{keyword}{public} \mbox{\hyperlink{classDataList_a1846b9cb0b23b72905ce26919a8cf166}{DataList}}(List<TimedData> data, \textcolor{keywordtype}{int} limit = 10, \textcolor{keywordtype}{int} deviationLimit = 0)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00067}00067         this.data = data;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00068}00068         this.limit = limit;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00069}00069         this.deviationLimit = deviationLimit;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00072}\mbox{\hyperlink{classDataList_a6d8c0ea4e3b21b0ff8beda692a7c5976}{00072}}     \textcolor{keyword}{public} \mbox{\hyperlink{classTimedData}{TimedData}} \textcolor{keyword}{this}[\textcolor{keywordtype}{int} i]}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00073}00073     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00074}00074         \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} data[i]; \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00075}00075         \textcolor{keyword}{set} \{ data[i] = value; \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00078}\mbox{\hyperlink{classDataList_ab91eddc0a002d61a9fee6a38d769abb7}{00078}}     \textcolor{keyword}{public} \textcolor{keyword}{static} implicit \textcolor{keyword}{operator} double(\mbox{\hyperlink{classDataList}{DataList}} x) => x[x.Count-\/1].\mbox{\hyperlink{classTimedData_a3dd70e792e4779c9461759949051df03}{value}};}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00081}\mbox{\hyperlink{classDataList_a588cf282350617903d76c530c3e00e9f}{00081}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classDataList_a588cf282350617903d76c530c3e00e9f}{Add}}(\textcolor{keywordtype}{double} value)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00082}00082     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00083}00083         data.Add(\textcolor{keyword}{new} \mbox{\hyperlink{classTimedData}{TimedData}}(value, DateTime.Now));}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00084}00084         \textcolor{keywordflow}{if} (Count > limit) \{ data.RemoveRange(0, Count-\/limit); \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00088}\mbox{\hyperlink{classDataList_acc2b50c9af1eedac9bdf8d32e14687b0}{00088}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classDataList_acc2b50c9af1eedac9bdf8d32e14687b0}{Add}}(\textcolor{keywordtype}{double} value, DateTime time)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00089}00089     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00090}00090         data.Add(\textcolor{keyword}{new} \mbox{\hyperlink{classTimedData}{TimedData}}(value, time));}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00091}00091         \textcolor{keywordflow}{if} (Count > limit) \{ data.RemoveRange(0, Count-\/limit); \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00095}\mbox{\hyperlink{classDataList_addc42991ecec22a1937bef09e5eaed98}{00095}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classDataList_addc42991ecec22a1937bef09e5eaed98}{Add}}(\mbox{\hyperlink{classTimedData}{TimedData}} value)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00096}00096     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00097}00097         data.Add(value);}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00101}\mbox{\hyperlink{classDataList_a1ebc20a0fa152ce2f273a93da3fa1939}{00101}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classDataList_a1ebc20a0fa152ce2f273a93da3fa1939}{Average}}()}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00102}00102     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00103}00103         \textcolor{keywordflow}{return} data.Average(x => x.value);}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00109}\mbox{\hyperlink{classDataList_ace789d9fd95edb643892f9fe679bc027}{00109}}     \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classDataList_ace789d9fd95edb643892f9fe679bc027}{WeightedAverage}}(\textcolor{keywordtype}{double} weight)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00110}00110     \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00111}00111         \textcolor{keywordtype}{double} average = 0;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00112}00112         \textcolor{keywordtype}{double} added = 0;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00113}00113         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Count; ++i)}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00114}00114         \{}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00115}00115             average += data[i].value * (i + 1) * weight;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00116}00116             added += (i + 1) * weight;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00117}00117         \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00118}00118         average /= added;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00119}00119         \textcolor{keywordflow}{return} average;}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00122}00122 \} \textcolor{comment}{// Namespace Data}}
+\DoxyCodeLine{\Hypertarget{Data_8cs_source_l00123}00123 \} \textcolor{comment}{// Namespace BCIData}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\hypertarget{_test_behavior_8cs_source}{}\doxysection{Test\+Behavior.\+cs}
+\label{_test_behavior_8cs_source}\index{Scripts/Testing/TestBehavior.cs@{Scripts/Testing/TestBehavior.cs}}
+\mbox{\hyperlink{_test_behavior_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00001}00001 \textcolor{keyword}{using} UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_sensor_a_p_i}{SensorAPI}};}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00003}00003 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00005}\mbox{\hyperlink{class_test_behavior}{00005}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_test_behavior}{TestBehavior}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00007}00007     \mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino}{HEGduino}} heg;}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00008}\mbox{\hyperlink{class_test_behavior_adef0e70512e4bd11319d3e38e6071bd6}{00008}}     \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_test_behavior_adef0e70512e4bd11319d3e38e6071bd6}{portLocation}} = \textcolor{stringliteral}{"{}/dev/tty.usbserial-\/01DFAAE3"{}};}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00009}00009     StreamWriter file;}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00011}\mbox{\hyperlink{class_test_behavior_a2e1e9bed070bd7903d496b028e0909f4}{00011}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_behavior_a2e1e9bed070bd7903d496b028e0909f4}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00012}00012     \{}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00013}00013         print(\textcolor{stringliteral}{"{}Start INIT"{}});}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00014}00014         heg = \textcolor{keyword}{new} \mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino}{HEGduino}}(\mbox{\hyperlink{class_test_behavior_adef0e70512e4bd11319d3e38e6071bd6}{portLocation}});}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00015}00015         heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_a4541c23d226283f07faab28b31bfb7d6}{Data}}[\textcolor{stringliteral}{"{}brain\_bloodflow"{}}].limit = 30;}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00016}00016         heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_a4541c23d226283f07faab28b31bfb7d6}{Data}}[\textcolor{stringliteral}{"{}brain\_bloodflow"{}}].deviationLimit = 1.5;}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00017}00017         heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_a3d98bc98256e4ae5f564f6009176751b}{Start}}();}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00018}00018         print(\textcolor{stringliteral}{"{}Finish INIT"{}});}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00019}00019         file = \textcolor{keyword}{new} StreamWriter(\textcolor{stringliteral}{"{}test\_data.csv"{}});}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00020}00020         file.WriteLine(\textcolor{stringliteral}{"{}data,avg1,avg0.5"{}});}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00023}\mbox{\hyperlink{class_test_behavior_a2587cf4449ea918e8b4e3f0078b9a87e}{00023}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_behavior_a2587cf4449ea918e8b4e3f0078b9a87e}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00024}00024     \{}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00025}00025         \textcolor{comment}{//TODO: Change IsUpdating name}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00026}00026         \textcolor{keywordflow}{if} (heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_aeb425281bad1dbb31c6a893f5d13e49d}{IsUpdating}})}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00027}00027         \{}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00028}00028             \textcolor{comment}{//print("{}Data: "{} + (double)heg.Data["{}brain\_bloodflow"{}]);}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00029}00029             \textcolor{comment}{//print("{}Amount: "{} + heg.Data["{}brain\_bloodflow"{}].Count);}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00030}00030             \textcolor{comment}{//print("{}AVG Data: "{} + heg.Data["{}brain\_bloodflow"{}].WeightedAverage(0.5));}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00031}00031             file.WriteLine(heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_a4541c23d226283f07faab28b31bfb7d6}{Data}}[\textcolor{stringliteral}{"{}brain\_bloodflow"{}}] + \textcolor{stringliteral}{"{},"{}} + heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_a4541c23d226283f07faab28b31bfb7d6}{Data}}[\textcolor{stringliteral}{"{}brain\_bloodflow"{}}].WeightedAverage(1) + \textcolor{stringliteral}{"{},"{}} + heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_a4541c23d226283f07faab28b31bfb7d6}{Data}}[\textcolor{stringliteral}{"{}brain\_bloodflow"{}}].WeightedAverage(0.5));}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00033}00033         \textcolor{keywordflow}{if} (!heg.\mbox{\hyperlink{class_sensor_a_p_i_1_1_h_e_gduino_aaba196b649ec2aab361304cbfa00cf89}{IsConnected}})}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00034}00034         \{}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00035}00035             print(\textcolor{stringliteral}{"{}Disconnected."{}});}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00036}00036         \}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_test_behavior_8cs_source_l00038}00038 \}}
+
+\end{DoxyCode}
