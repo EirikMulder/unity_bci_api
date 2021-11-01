@@ -76,6 +76,16 @@ $(function() {
 
 <p><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html" title="IController interface defines how a BCI device driver should behave.">IController</a> interface defines how a BCI device driver should behave.  
  <a href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for SensorAPI.Interfaces.IController:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interfaceSensorAPI_1_1Interfaces_1_1IController.png" usemap="#SensorAPI.Interfaces.IController_map" alt=""/>
+  <map id="SensorAPI.Interfaces.IController_map" name="SensorAPI.Interfaces.IController_map">
+<area href="classSensorAPI_1_1Controllers_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial...." alt="SensorAPI.Controllers.HEGduino" shape="rect" coords="0,56,199,80"/>
+<area href="classSensorAPI_1_1Testing_1_1Tester.html" title="A test controller emulating a fake device. Can be used to test applications which rely on a device,..." alt="SensorAPI.Testing.Tester" shape="rect" coords="209,56,408,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -88,7 +98,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ae73859d3d8fd950e8ef8d3b3007698c7"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="classDataList.html">DataList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#ae73859d3d8fd950e8ef8d3b3007698c7">Data</a><code> [get]</code></td></tr>
+<tr class="memitem:ae73859d3d8fd950e8ef8d3b3007698c7"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="classSensorAPI_1_1Data_1_1DataList.html">DataList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#ae73859d3d8fd950e8ef8d3b3007698c7">Data</a><code> [get]</code></td></tr>
 <tr class="separator:ae73859d3d8fd950e8ef8d3b3007698c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2300824c11a10e0f811e7b97eb0daac8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a2300824c11a10e0f811e7b97eb0daac8">IsConnected</a><code> [get]</code></td></tr>
 <tr class="memdesc:a2300824c11a10e0f811e7b97eb0daac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the device connected to the PC?  <a href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a2300824c11a10e0f811e7b97eb0daac8">More...</a><br /></td></tr>
@@ -100,8 +110,8 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html" title="IController interface defines how a BCI device driver should behave.">IController</a> interface defines how a BCI device driver should behave. </p>
 <p >The constructor should automatically set up the device connection, and may optionally take parameters to specify the correct device.</p>
-<p >the data property is a Dictionary with string keys (lowercase), and <a class="el" href="classDataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a> objects.</p>
-<p >The <a class="el" href="classDataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a> object (defined in <a class="el" href="Data_8cs.html">Data.cs</a>) is a list of '<a class="el" href="classTimedData.html" title="A double value (value) paired with a DateTime timestamp (time)">TimedData</a>' objects, and can take averages, weighted averages, and preform other operations on the data. </p>
+<p >the data property is a Dictionary with string keys (lowercase), and DataList objects.</p>
+<p >The DataList object (defined in <a class="el" href="Data_8cs.html">Data.cs</a>) is a list of 'TimedData' objects, and can take averages, weighted averages, and preform other operations on the data. </p>
 
 <p class="definition">Definition at line <a class="el" href="IController_8cs_source.html#l00020">20</a> of file <a class="el" href="IController_8cs_source.html">IController.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -122,6 +132,8 @@ Properties</h2></td></tr>
 
 <p>Start data collection, if connected. </p>
 
+<p>Implemented in <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a4b5da44c3ed35086249474a195674119">SensorAPI.Controllers.HEGduino</a>, and <a class="el" href="classSensorAPI_1_1Testing_1_1Tester.html#ab9b6da7370ff470682d2a0342b4bd705">SensorAPI.Testing.Tester</a>.</p>
+
 </div>
 </div>
 <a id="a74a2ff03b4aa4cd8ce43569378ed1716" name="a74a2ff03b4aa4cd8ce43569378ed1716"></a>
@@ -141,6 +153,8 @@ Properties</h2></td></tr>
 
 <p>Stop data collection. </p>
 
+<p>Implemented in <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a01a3636a8e359f336dfe08e645573f84">SensorAPI.Controllers.HEGduino</a>, and <a class="el" href="classSensorAPI_1_1Testing_1_1Tester.html#a7eebdb12487620d233d45be2e09756b4">SensorAPI.Testing.Tester</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -154,7 +168,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Dictionary&lt;string, <a class="el" href="classDataList.html">DataList</a>&gt; SensorAPI.Interfaces.IController.Data</td>
+          <td class="memname">Dictionary&lt;string, <a class="el" href="classSensorAPI_1_1Data_1_1DataList.html">DataList</a>&gt; SensorAPI.Interfaces.IController.Data</td>
         </tr>
       </table>
   </td>

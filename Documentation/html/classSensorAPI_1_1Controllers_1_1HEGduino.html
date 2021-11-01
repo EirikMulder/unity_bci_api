@@ -81,8 +81,11 @@ $(function() {
 Inheritance diagram for SensorAPI.Controllers.HEGduino:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classSensorAPI_1_1Controllers_1_1HEGduino.png" alt=""/>
- </div></div>
+  <img src="classSensorAPI_1_1Controllers_1_1HEGduino.png" usemap="#SensorAPI.Controllers.HEGduino_map" alt=""/>
+  <map id="SensorAPI.Controllers.HEGduino_map" name="SensorAPI.Controllers.HEGduino_map">
+<area href="interfaceSensorAPI_1_1Interfaces_1_1IController.html" title="IController interface defines how a BCI device driver should behave." alt="SensorAPI.Interfaces.IController" shape="rect" coords="0,0,199,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -93,7 +96,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a01a3636a8e359f336dfe08e645573f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to false, kills the management thread, and sends the stop message.  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a01a3636a8e359f336dfe08e645573f84">More...</a><br /></td></tr>
 <tr class="separator:a01a3636a8e359f336dfe08e645573f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2d8af1036c0dafd4f500747495da3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a2e2d8af1036c0dafd4f500747495da3a">HEGduino</a> (string portLocation)</td></tr>
-<tr class="memdesc:a2e2d8af1036c0dafd4f500747495da3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true.  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a2e2d8af1036c0dafd4f500747495da3a">More...</a><br /></td></tr>
+<tr class="memdesc:a2e2d8af1036c0dafd4f500747495da3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the HEG connection with the provided serial port. Initializes the <a class="el" href="namespaceSensorAPI_1_1Data.html">Data</a> dictionary, sets up the serial connection, sets IsConnected to true.  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a2e2d8af1036c0dafd4f500747495da3a">More...</a><br /></td></tr>
 <tr class="separator:a2e2d8af1036c0dafd4f500747495da3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -103,8 +106,8 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ae93941df5d8a72cd66c871adf48d49fd"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="classDataList.html">DataList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#ae93941df5d8a72cd66c871adf48d49fd">Data</a><code> [get]</code></td></tr>
-<tr class="memdesc:ae93941df5d8a72cd66c871adf48d49fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data output from the device. A dictionary in the format: Label (string): <a class="el" href="classDataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a>. Use the 'brain_bloodflow' label to access the <a class="el" href="classDataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a> for bloodflow from the HEG.  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#ae93941df5d8a72cd66c871adf48d49fd">More...</a><br /></td></tr>
+<tr class="memitem:ae93941df5d8a72cd66c871adf48d49fd"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="classSensorAPI_1_1Data_1_1DataList.html">DataList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#ae93941df5d8a72cd66c871adf48d49fd">Data</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae93941df5d8a72cd66c871adf48d49fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceSensorAPI_1_1Data.html">Data</a> output from the device. A dictionary in the format: Label (string): DataList. Use the 'brain_bloodflow' label to access the DataList for bloodflow from the HEG.  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#ae93941df5d8a72cd66c871adf48d49fd">More...</a><br /></td></tr>
 <tr class="separator:ae93941df5d8a72cd66c871adf48d49fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44d44293cce73b6c37cc1195dd864435"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a44d44293cce73b6c37cc1195dd864435">IsConnected</a><code> [get]</code></td></tr>
 <tr class="memdesc:a44d44293cce73b6c37cc1195dd864435"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool: Is the device connected to the serial port.  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#a44d44293cce73b6c37cc1195dd864435">More...</a><br /></td></tr>
@@ -112,11 +115,20 @@ Properties</h2></td></tr>
 <tr class="memitem:ad177741ecb93462957b923f63cb53498"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html#ad177741ecb93462957b923f63cb53498">IsUpdating</a><code> [get]</code></td></tr>
 <tr class="memdesc:ad177741ecb93462957b923f63cb53498"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool: Is the data field refreshing (false if device is connected but disabled)  <a href="classSensorAPI_1_1Controllers_1_1HEGduino.html#ad177741ecb93462957b923f63cb53498">More...</a><br /></td></tr>
 <tr class="separator:ad177741ecb93462957b923f63cb53498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td colspan="2" onclick="javascript:toggleInherit('properties_interfaceSensorAPI_1_1Interfaces_1_1IController')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html">SensorAPI.Interfaces.IController</a></td></tr>
+<tr class="memitem:ae73859d3d8fd950e8ef8d3b3007698c7 inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="classSensorAPI_1_1Data_1_1DataList.html">DataList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#ae73859d3d8fd950e8ef8d3b3007698c7">Data</a><code> [get]</code></td></tr>
+<tr class="separator:ae73859d3d8fd950e8ef8d3b3007698c7 inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2300824c11a10e0f811e7b97eb0daac8 inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a2300824c11a10e0f811e7b97eb0daac8">IsConnected</a><code> [get]</code></td></tr>
+<tr class="memdesc:a2300824c11a10e0f811e7b97eb0daac8 inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the device connected to the PC?  <a href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a2300824c11a10e0f811e7b97eb0daac8">More...</a><br /></td></tr>
+<tr class="separator:a2300824c11a10e0f811e7b97eb0daac8 inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09fadbad83533e481bf03fe14429f3bf inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a09fadbad83533e481bf03fe14429f3bf">IsUpdating</a><code> [get]</code></td></tr>
+<tr class="memdesc:a09fadbad83533e481bf03fe14429f3bf inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the data property being updated by the device?  <a href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a09fadbad83533e481bf03fe14429f3bf">More...</a><br /></td></tr>
+<tr class="separator:a09fadbad83533e481bf03fe14429f3bf inherit properties_interfaceSensorAPI_1_1Interfaces_1_1IController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Controls a single <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a> device. Connects to and manages a <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a> device, connected via serial. Provides data output from the device. </p>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00017">17</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00019">19</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2e2d8af1036c0dafd4f500747495da3a" name="a2e2d8af1036c0dafd4f500747495da3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e2d8af1036c0dafd4f500747495da3a">&#9670;&nbsp;</a></span>HEGduino()</h2>
@@ -134,7 +146,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the HEG connection with the provided serial port. Initializes the Data dictionary, sets up the serial connection, sets IsConnected to true. </p>
+<p>Initializes the HEG connection with the provided serial port. Initializes the <a class="el" href="namespaceSensorAPI_1_1Data.html">Data</a> dictionary, sets up the serial connection, sets IsConnected to true. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">portLocation</td><td>A string with the serial port location (COMx on windows, file location on linux/macos). </td></tr>
@@ -142,7 +154,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00083">83</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00082">82</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>
@@ -164,7 +176,9 @@ Properties</h2></td></tr>
 
 <p>Starts the <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to true, launches the management thread, and sends the start message. </p>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00051">51</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p>Implements <a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#ab3bbd977a6026f829c4e0318762162a1">SensorAPI.Interfaces.IController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00053">53</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>
@@ -185,7 +199,9 @@ Properties</h2></td></tr>
 
 <p>Stops the <a class="el" href="classSensorAPI_1_1Controllers_1_1HEGduino.html" title="Controls a single HEGduino device. Connects to and manages a HEGduino device, connected via serial....">HEGduino</a>. Sets IsUpdating to false, kills the management thread, and sends the stop message. </p>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00068">68</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p>Implements <a class="el" href="interfaceSensorAPI_1_1Interfaces_1_1IController.html#a74a2ff03b4aa4cd8ce43569378ed1716">SensorAPI.Interfaces.IController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00067">67</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>
@@ -202,7 +218,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00038">38</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00040">40</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>
@@ -217,7 +233,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Dictionary&lt;string, <a class="el" href="classDataList.html">DataList</a>&gt; SensorAPI.Controllers.HEGduino.Data</td>
+          <td class="memname">Dictionary&lt;string, <a class="el" href="classSensorAPI_1_1Data_1_1DataList.html">DataList</a>&gt; SensorAPI.Controllers.HEGduino.Data</td>
         </tr>
       </table>
   </td>
@@ -227,9 +243,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Data output from the device. A dictionary in the format: Label (string): <a class="el" href="classDataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a>. Use the 'brain_bloodflow' label to access the <a class="el" href="classDataList.html" title="A list of TimedData values. Keeps track of the number of values, the max number of values (for rollin...">DataList</a> for bloodflow from the HEG. </p>
+<p><a class="el" href="namespaceSensorAPI_1_1Data.html">Data</a> output from the device. A dictionary in the format: Label (string): DataList. Use the 'brain_bloodflow' label to access the DataList for bloodflow from the HEG. </p>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00024">24</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00026">26</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>
@@ -255,7 +271,7 @@ Properties</h2></td></tr>
 
 <p>bool: Is the device connected to the serial port. </p>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00028">28</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00030">30</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>
@@ -281,7 +297,7 @@ Properties</h2></td></tr>
 
 <p>bool: Is the data field refreshing (false if device is connected but disabled) </p>
 
-<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00032">32</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HEGduino_8cs_source.html#l00034">34</a> of file <a class="el" href="HEGduino_8cs_source.html">HEGduino.cs</a>.</p>
 
 </div>
 </div>

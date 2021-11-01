@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['add_0',['Add',['../classDataList.html#a588cf282350617903d76c530c3e00e9f',1,'DataList.Add(double value)'],['../classDataList.html#acc2b50c9af1eedac9bdf8d32e14687b0',1,'DataList.Add(double value, DateTime time)'],['../classDataList.html#addc42991ecec22a1937bef09e5eaed98',1,'DataList.Add(TimedData value)']]],
-  ['average_1',['Average',['../classDataList.html#a1ebc20a0fa152ce2f273a93da3fa1939',1,'DataList']]]
+  ['add_0',['Add',['../classSensorAPI_1_1Data_1_1DataList.html#a4bb70be03e3f97cb4287c0936aa95ec7',1,'SensorAPI.Data.DataList.Add(double value)'],['../classSensorAPI_1_1Data_1_1DataList.html#a81e84dd1ab8adc050ab90d7a019eb82d',1,'SensorAPI.Data.DataList.Add(double value, DateTime time)'],['../classSensorAPI_1_1Data_1_1DataList.html#af4fcecf5855c9f46a86ef99a51c2c4ce',1,'SensorAPI.Data.DataList.Add(TimedData value)']]],
+  ['average_1',['Average',['../classSensorAPI_1_1Data_1_1DataList.html#aa00de486bffed1ff96c567ad9dd76520',1,'SensorAPI::Data::DataList']]]
 ];

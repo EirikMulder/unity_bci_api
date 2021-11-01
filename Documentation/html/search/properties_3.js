@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readtimeout_0',['ReadTimeout',['../classSensorAPI_1_1Connections_1_1SerialConnection.html#a2410196c6c6c818b343a903ca24df0e8',1,'SensorAPI::Connections::SerialConnection']]]
+  ['latest_0',['Latest',['../classSensorAPI_1_1Data_1_1DataList.html#a6434ad1d3bacb76120afaa7fa29d7224',1,'SensorAPI::Data::DataList']]]
 ];

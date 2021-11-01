@@ -2,7 +2,7 @@
 \label{classSensorAPI_1_1Testing_1_1Tester}\index{SensorAPI.Testing.Tester@{SensorAPI.Testing.Tester}}
 
 
-A test controller emulating a fake device. Can be used to test applications which rely on a device, as well as testing out the Data library on fake data sets.  
+A test controller emulating a fake device. Can be used to test applications which rely on a device, as well as testing out the \mbox{\hyperlink{namespaceSensorAPI_1_1Data}{Data}} library on fake data sets.  
 
 
 Inheritance diagram for Sensor\+API.\+Testing.\+Tester\+:\begin{figure}[H]
@@ -23,18 +23,18 @@ void \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_a7eebdb12487620d233d45
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-Dictionary$<$ string, \mbox{\hyperlink{classDataList}{Data\+List}} $>$ \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_a9fa92dbea3c11dd1c54bc9689d59ff93}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+Dictionary$<$ string, \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} $>$ \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_a9fa92dbea3c11dd1c54bc9689d59ff93}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em The data. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_a087b51e5e28f2dc82e76a5921877d111}{Is\+Connected}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Is the fake device connected. Typically true. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_a9ce6acf7c4e3b67ce0c2f924b4f5f0d7}{Is\+Updating}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Is the Data attribute being refreshed and is the device on (if it can be turned off). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Is the \mbox{\hyperlink{namespaceSensorAPI_1_1Data}{Data}} attribute being refreshed and is the device on (if it can be turned off). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A test controller emulating a fake device. Can be used to test applications which rely on a device, as well as testing out the Data library on fake data sets. 
+A test controller emulating a fake device. Can be used to test applications which rely on a device, as well as testing out the \mbox{\hyperlink{namespaceSensorAPI_1_1Data}{Data}} library on fake data sets. 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00013}{13}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00014}{14}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 
 
@@ -51,7 +51,7 @@ Initializes the tester (currently just prints INIT)
 
 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00032}{32}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00033}{33}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 
 
@@ -68,7 +68,11 @@ Starts the data stream.
 
 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00022}{22}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Implements \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_ab3bbd977a6026f829c4e0318762162a1}{Sensor\+API.\+Interfaces.\+IController}}.
+
+
+
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00023}{23}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 \mbox{\Hypertarget{classSensorAPI_1_1Testing_1_1Tester_a7eebdb12487620d233d45be2e09756b4}\label{classSensorAPI_1_1Testing_1_1Tester_a7eebdb12487620d233d45be2e09756b4}} 
 \index{SensorAPI.Testing.Tester@{SensorAPI.Testing.Tester}!Stop@{Stop}}
@@ -82,7 +86,11 @@ Stops the data stream.
 
 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00027}{27}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Implements \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_a74a2ff03b4aa4cd8ce43569378ed1716}{Sensor\+API.\+Interfaces.\+IController}}.
+
+
+
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00028}{28}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 
 
@@ -91,7 +99,7 @@ Definition at line \mbox{\hyperlink{TestController_8cs_source_l00027}{27}} of fi
 \index{SensorAPI.Testing.Tester@{SensorAPI.Testing.Tester}!Data@{Data}}
 \index{Data@{Data}!SensorAPI.Testing.Tester@{SensorAPI.Testing.Tester}}
 \doxysubsubsection{\texorpdfstring{Data}{Data}}
-{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{classDataList}{Data\+List}}$>$ Sensor\+API.\+Testing.\+Tester.\+Data\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}}$>$ Sensor\+API.\+Testing.\+Tester.\+Data\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -99,7 +107,7 @@ The data.
 
 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00016}{16}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00017}{17}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 \mbox{\Hypertarget{classSensorAPI_1_1Testing_1_1Tester_a087b51e5e28f2dc82e76a5921877d111}\label{classSensorAPI_1_1Testing_1_1Tester_a087b51e5e28f2dc82e76a5921877d111}} 
 \index{SensorAPI.Testing.Tester@{SensorAPI.Testing.Tester}!IsConnected@{IsConnected}}
@@ -113,7 +121,7 @@ Is the fake device connected. Typically true.
 
 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00018}{18}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00019}{19}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 \mbox{\Hypertarget{classSensorAPI_1_1Testing_1_1Tester_a9ce6acf7c4e3b67ce0c2f924b4f5f0d7}\label{classSensorAPI_1_1Testing_1_1Tester_a9ce6acf7c4e3b67ce0c2f924b4f5f0d7}} 
 \index{SensorAPI.Testing.Tester@{SensorAPI.Testing.Tester}!IsUpdating@{IsUpdating}}
@@ -123,11 +131,11 @@ Definition at line \mbox{\hyperlink{TestController_8cs_source_l00018}{18}} of fi
 
 
 
-Is the Data attribute being refreshed and is the device on (if it can be turned off). 
+Is the \mbox{\hyperlink{namespaceSensorAPI_1_1Data}{Data}} attribute being refreshed and is the device on (if it can be turned off). 
 
 
 
-Definition at line \mbox{\hyperlink{TestController_8cs_source_l00020}{20}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00021}{21}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
 
 
 

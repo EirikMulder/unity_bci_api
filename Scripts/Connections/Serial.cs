@@ -42,9 +42,11 @@ public class SerialConnection
      */
     public SerialConnection(string portName, int baudRate, int readTimeout = 50)
     {
-        port = new SerialPort(portName, baudRate);
-        ReadTimeout = readTimeout;
-        port.Open();
+                port = new SerialPort(portName, baudRate)
+                {
+                    ReadTimeout = readTimeout
+                };
+                port.Open();
     }
 
     /**
@@ -80,7 +82,6 @@ public class SerialConnection
             }
             catch (TimeoutException)
             {
-                Debug.Log("TIMEOUT");
                 message = null;
                 return true;
             }

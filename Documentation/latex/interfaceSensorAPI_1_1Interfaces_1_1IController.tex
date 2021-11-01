@@ -5,6 +5,12 @@
 \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController}{IController}} interface defines how a BCI device driver should behave.  
 
 
+Inheritance diagram for Sensor\+API.\+Interfaces.\+IController\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceSensorAPI_1_1Interfaces_1_1IController}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,7 +21,7 @@ void \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_a74a2ff03b
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-Dictionary$<$ string, \mbox{\hyperlink{classDataList}{Data\+List}} $>$ \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_ae73859d3d8fd950e8ef8d3b3007698c7}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+Dictionary$<$ string, \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} $>$ \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_ae73859d3d8fd950e8ef8d3b3007698c7}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 bool \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_a2300824c11a10e0f811e7b97eb0daac8}{Is\+Connected}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Is the device connected to the PC? \end{DoxyCompactList}\item 
@@ -28,9 +34,9 @@ bool \mbox{\hyperlink{interfaceSensorAPI_1_1Interfaces_1_1IController_a09fadbad8
 
 The constructor should automatically set up the device connection, and may optionally take parameters to specify the correct device.
 
-the data property is a Dictionary with string keys (lowercase), and \mbox{\hyperlink{classDataList}{Data\+List}} objects.
+the data property is a Dictionary with string keys (lowercase), and Data\+List objects.
 
-The \mbox{\hyperlink{classDataList}{Data\+List}} object (defined in \mbox{\hyperlink{Data_8cs}{Data.\+cs}}) is a list of \textquotesingle{}\mbox{\hyperlink{classTimedData}{Timed\+Data}}\textquotesingle{} objects, and can take averages, weighted averages, and preform other operations on the data. 
+The Data\+List object (defined in \mbox{\hyperlink{Data_8cs}{Data.\+cs}}) is a list of \textquotesingle{}Timed\+Data\textquotesingle{} objects, and can take averages, weighted averages, and preform other operations on the data. 
 
 Definition at line \mbox{\hyperlink{IController_8cs_source_l00020}{20}} of file \mbox{\hyperlink{IController_8cs_source}{IController.\+cs}}.
 
@@ -47,6 +53,10 @@ Definition at line \mbox{\hyperlink{IController_8cs_source_l00020}{20}} of file 
 
 Start data collection, if connected. 
 
+
+
+Implemented in \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a4b5da44c3ed35086249474a195674119}{Sensor\+API.\+Controllers.\+HEGduino}}, and \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_ab9b6da7370ff470682d2a0342b4bd705}{Sensor\+API.\+Testing.\+Tester}}.
+
 \mbox{\Hypertarget{interfaceSensorAPI_1_1Interfaces_1_1IController_a74a2ff03b4aa4cd8ce43569378ed1716}\label{interfaceSensorAPI_1_1Interfaces_1_1IController_a74a2ff03b4aa4cd8ce43569378ed1716}} 
 \index{SensorAPI.Interfaces.IController@{SensorAPI.Interfaces.IController}!Stop@{Stop}}
 \index{Stop@{Stop}!SensorAPI.Interfaces.IController@{SensorAPI.Interfaces.IController}}
@@ -59,12 +69,16 @@ Stop data collection.
 
 
 
+Implemented in \mbox{\hyperlink{classSensorAPI_1_1Controllers_1_1HEGduino_a01a3636a8e359f336dfe08e645573f84}{Sensor\+API.\+Controllers.\+HEGduino}}, and \mbox{\hyperlink{classSensorAPI_1_1Testing_1_1Tester_a7eebdb12487620d233d45be2e09756b4}{Sensor\+API.\+Testing.\+Tester}}.
+
+
+
 \doxysubsection{Property Documentation}
 \mbox{\Hypertarget{interfaceSensorAPI_1_1Interfaces_1_1IController_ae73859d3d8fd950e8ef8d3b3007698c7}\label{interfaceSensorAPI_1_1Interfaces_1_1IController_ae73859d3d8fd950e8ef8d3b3007698c7}} 
 \index{SensorAPI.Interfaces.IController@{SensorAPI.Interfaces.IController}!Data@{Data}}
 \index{Data@{Data}!SensorAPI.Interfaces.IController@{SensorAPI.Interfaces.IController}}
 \doxysubsubsection{\texorpdfstring{Data}{Data}}
-{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{classDataList}{Data\+List}}$>$ Sensor\+API.\+Interfaces.\+IController.\+Data\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}}$>$ Sensor\+API.\+Interfaces.\+IController.\+Data\hspace{0.3cm}{\ttfamily [get]}}
 
 The latest data from the device. 
 

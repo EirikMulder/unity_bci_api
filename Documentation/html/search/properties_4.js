@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['this_5bint_20i_5d_0',['this[int i]',['../classDataList.html#a6d8c0ea4e3b21b0ff8beda692a7c5976',1,'DataList']]]
+  ['readtimeout_0',['ReadTimeout',['../classSensorAPI_1_1Connections_1_1SerialConnection.html#a2410196c6c6c818b343a903ca24df0e8',1,'SensorAPI::Connections::SerialConnection']]]
 ];

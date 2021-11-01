@@ -1,0 +1,239 @@
+\hypertarget{classSensorAPI_1_1Data_1_1DataList}{}\doxysection{Sensor\+API.\+Data.\+Data\+List Class Reference}
+\label{classSensorAPI_1_1Data_1_1DataList}\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+
+
+A list of \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} values. Keeps track of the number of values, the max number of values (for rolling averages), and the maximum absolute value of an added value.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a25495ce18982dc8f51c2df2fd2a09a46}{Data\+List}} (int \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a0c3e3aaac47c03a0a865d71c28f90ded}{limit}}=10, int \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a2a56ecab905bb0fec095389880dd2cdd}{deviation\+Limit}}=0)
+\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} with default limit = 10, and no deviation\+Limit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_ad00bd38f5ec8d7ddb9a8e632b6ab7d12}{Data\+List}} (List$<$ \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} $>$ data, int \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a0c3e3aaac47c03a0a865d71c28f90ded}{limit}}=10, int \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a2a56ecab905bb0fec095389880dd2cdd}{deviation\+Limit}}=0)
+\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} with a List$<$\+Timed\+Data$>$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a4bb70be03e3f97cb4287c0936aa95ec7}{Add}} (double value)
+\begin{DoxyCompactList}\small\item\em add new double value at the current time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a81e84dd1ab8adc050ab90d7a019eb82d}{Add}} (double value, Date\+Time time)
+\begin{DoxyCompactList}\small\item\em add new double value at the specified time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_af4fcecf5855c9f46a86ef99a51c2c4ce}{Add}} (\mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} value)
+\begin{DoxyCompactList}\small\item\em add new \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} value \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_aa00de486bffed1ff96c567ad9dd76520}{Average}} ()
+\begin{DoxyCompactList}\small\item\em Take the average of the list. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a061ebfc6dcfd432ed49f52d93b6aae53}{Weighted\+Average}} (double weight)
+\begin{DoxyCompactList}\small\item\em Take a weighted average of the list. weight is multipled with the index of each value to produce the weight. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static implicit \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_adaa2160bf276cde0ba8f0b40c3c1cf38}{operator double}} (\mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a0c3e3aaac47c03a0a865d71c28f90ded}{limit}}
+\begin{DoxyCompactList}\small\item\em The max number of entries in the list. When exceeded, the earliest value added is removed. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a2a56ecab905bb0fec095389880dd2cdd}{deviation\+Limit}}
+\begin{DoxyCompactList}\small\item\em The max absolute value of an entry. When exceeded, the value is rounded to the limit. If set to 0, there is no limit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a264d047469057509496ec9f9db27df6f}{Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of entries in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a6434ad1d3bacb76120afaa7fa29d7224}{Latest}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The latest reading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList_a05fe1a900393a331f2080081d876a9e6}{this\mbox{[}int i\mbox{]}}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A list of \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} values. Keeps track of the number of values, the max number of values (for rolling averages), and the maximum absolute value of an added value. 
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00042}{42}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a25495ce18982dc8f51c2df2fd2a09a46}\label{classSensorAPI_1_1Data_1_1DataList_a25495ce18982dc8f51c2df2fd2a09a46}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!DataList@{DataList}}
+\index{DataList@{DataList}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{DataList()}{DataList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sensor\+API.\+Data.\+Data\+List.\+Data\+List (\begin{DoxyParamCaption}\item[{int}]{limit = {\ttfamily 10},  }\item[{int}]{deviation\+Limit = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialize the \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} with default limit = 10, and no deviation\+Limit. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00060}{60}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_ad00bd38f5ec8d7ddb9a8e632b6ab7d12}\label{classSensorAPI_1_1Data_1_1DataList_ad00bd38f5ec8d7ddb9a8e632b6ab7d12}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!DataList@{DataList}}
+\index{DataList@{DataList}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{DataList()}{DataList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sensor\+API.\+Data.\+Data\+List.\+Data\+List (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} $>$}]{data,  }\item[{int}]{limit = {\ttfamily 10},  }\item[{int}]{deviation\+Limit = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialize the \mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}} with a List$<$\+Timed\+Data$>$. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00068}{68}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a4bb70be03e3f97cb4287c0936aa95ec7}\label{classSensorAPI_1_1Data_1_1DataList_a4bb70be03e3f97cb4287c0936aa95ec7}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!Add@{Add}}
+\index{Add@{Add}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Sensor\+API.\+Data.\+Data\+List.\+Add (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+add new double value at the current time. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00084}{84}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a81e84dd1ab8adc050ab90d7a019eb82d}\label{classSensorAPI_1_1Data_1_1DataList_a81e84dd1ab8adc050ab90d7a019eb82d}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!Add@{Add}}
+\index{Add@{Add}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Sensor\+API.\+Data.\+Data\+List.\+Add (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{Date\+Time}]{time }\end{DoxyParamCaption})}
+
+
+
+add new double value at the specified time. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00091}{91}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_af4fcecf5855c9f46a86ef99a51c2c4ce}\label{classSensorAPI_1_1Data_1_1DataList_af4fcecf5855c9f46a86ef99a51c2c4ce}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!Add@{Add}}
+\index{Add@{Add}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Sensor\+API.\+Data.\+Data\+List.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}}}]{value }\end{DoxyParamCaption})}
+
+
+
+add new \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} value 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00098}{98}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_aa00de486bffed1ff96c567ad9dd76520}\label{classSensorAPI_1_1Data_1_1DataList_aa00de486bffed1ff96c567ad9dd76520}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!Average@{Average}}
+\index{Average@{Average}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{Average()}{Average()}}
+{\footnotesize\ttfamily double Sensor\+API.\+Data.\+Data\+List.\+Average (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Take the average of the list. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00105}{105}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_adaa2160bf276cde0ba8f0b40c3c1cf38}\label{classSensorAPI_1_1Data_1_1DataList_adaa2160bf276cde0ba8f0b40c3c1cf38}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!operator double@{operator double}}
+\index{operator double@{operator double}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{operator double()}{operator double()}}
+{\footnotesize\ttfamily static implicit Sensor\+API.\+Data.\+Data\+List.\+operator double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSensorAPI_1_1Data_1_1DataList}{Data\+List}}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a061ebfc6dcfd432ed49f52d93b6aae53}\label{classSensorAPI_1_1Data_1_1DataList_a061ebfc6dcfd432ed49f52d93b6aae53}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!WeightedAverage@{WeightedAverage}}
+\index{WeightedAverage@{WeightedAverage}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{WeightedAverage()}{WeightedAverage()}}
+{\footnotesize\ttfamily double Sensor\+API.\+Data.\+Data\+List.\+Weighted\+Average (\begin{DoxyParamCaption}\item[{double}]{weight }\end{DoxyParamCaption})}
+
+
+
+Take a weighted average of the list. weight is multipled with the index of each value to produce the weight. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00113}{113}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a2a56ecab905bb0fec095389880dd2cdd}\label{classSensorAPI_1_1Data_1_1DataList_a2a56ecab905bb0fec095389880dd2cdd}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!deviationLimit@{deviationLimit}}
+\index{deviationLimit@{deviationLimit}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{deviationLimit}{deviationLimit}}
+{\footnotesize\ttfamily double Sensor\+API.\+Data.\+Data\+List.\+deviation\+Limit}
+
+
+
+The max absolute value of an entry. When exceeded, the value is rounded to the limit. If set to 0, there is no limit. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00057}{57}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a0c3e3aaac47c03a0a865d71c28f90ded}\label{classSensorAPI_1_1Data_1_1DataList_a0c3e3aaac47c03a0a865d71c28f90ded}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!limit@{limit}}
+\index{limit@{limit}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily int Sensor\+API.\+Data.\+Data\+List.\+limit}
+
+
+
+The max number of entries in the list. When exceeded, the earliest value added is removed. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00052}{52}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a264d047469057509496ec9f9db27df6f}\label{classSensorAPI_1_1Data_1_1DataList_a264d047469057509496ec9f9db27df6f}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!Count@{Count}}
+\index{Count@{Count}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily int Sensor\+API.\+Data.\+Data\+List.\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The number of entries in the list. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00046}{46}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a6434ad1d3bacb76120afaa7fa29d7224}\label{classSensorAPI_1_1Data_1_1DataList_a6434ad1d3bacb76120afaa7fa29d7224}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!Latest@{Latest}}
+\index{Latest@{Latest}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{Latest}{Latest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} Sensor\+API.\+Data.\+Data\+List.\+Latest\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The latest reading. 
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00048}{48}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+\mbox{\Hypertarget{classSensorAPI_1_1Data_1_1DataList_a05fe1a900393a331f2080081d876a9e6}\label{classSensorAPI_1_1Data_1_1DataList_a05fe1a900393a331f2080081d876a9e6}} 
+\index{SensorAPI.Data.DataList@{SensorAPI.Data.DataList}!this\mbox{[}int i\mbox{]}@{this[int i]}}
+\index{this\mbox{[}int i\mbox{]}@{this[int i]}!SensorAPI.Data.DataList@{SensorAPI.Data.DataList}}
+\doxysubsubsection{\texorpdfstring{this[int i]}{this[int i]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSensorAPI_1_1Data_1_1TimedData}{Timed\+Data}} Sensor\+API.\+Data.\+Data\+List.\+this\mbox{[}int i\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Data_8cs_source_l00075}{75}} of file \mbox{\hyperlink{Data_8cs_source}{Data.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Data_8cs}{Data.\+cs}}\end{DoxyCompactItemize}
